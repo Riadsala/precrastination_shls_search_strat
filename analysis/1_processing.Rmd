@@ -20,9 +20,6 @@ set.seed(2022)
 #library(rethinking)
 library(tidyverse)
 library(patchwork)
-#library(brms)
-library(rstan)
-library(tidybayes)
 library(binom)
 ```
 
@@ -201,7 +198,7 @@ dat %>%
 Read in personality data and compute overall scores.
 
 ```{r}
-dat_p <- read_csv("../data/personsonality_q.csv") 
+dat_p <- read_csv("../data/personality_q.csv") 
 
 # creating list of questions
 procras_qs <- names(dat_p)[str_detect(names(dat_p), "ProScale")]

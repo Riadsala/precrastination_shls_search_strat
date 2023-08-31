@@ -99,9 +99,6 @@ if (window.hljs) {
 #library(rethinking)
 library(tidyverse)
 library(patchwork)
-#library(brms)
-library(rstan)
-library(tidybayes)
 library(binom)</code></pre>
 <pre class="r"><code># set ggplot2 options
 theme_set(ggthemes::theme_tufte() + 
@@ -308,7 +305,7 @@ knitr::kable(dpc)</code></pre>
 <div id="personality" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Personality</h1>
 <p>Read in personality data and compute overall scores.</p>
-<pre class="r"><code>dat_p &lt;- read_csv(&quot;../data/personsonality_q.csv&quot;) </code></pre>
+<pre class="r"><code>dat_p &lt;- read_csv(&quot;../data/personality_q.csv&quot;) </code></pre>
 <pre><code>## Rows: 304 Columns: 137
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
