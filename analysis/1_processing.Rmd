@@ -41,20 +41,24 @@ options(ggplot2.discrete.fill = our_cols ,
 
 Import data
 ```{r}
-dat <- read_csv("../data/processed_fix_data.txt", col_types = "fddddddddf")
+# read in trial data (reponse times and accuracy)
+dat_trl <- read_csv("../data/shls_rt_acc.csv", col_types = "cddcdd")
+
+# read in fixation data (only first 20 fixations... see ascii files for full raw data)
+dat_fix <- read_csv("../data/processed_fix_data.csv", col_types = "ddddddf")
+
+
 ```
 
 ## Reaction Time and Accuracy
 
 ```{r}
-dat_rt_acc <- dat %>%
-  group_by(site, person, targ_side_rel, trial) %>%
-  summarise(rt = unique(rt),
-            accurate = unique(accuracy), 
-            .groups = "drop_last") %>%
+dat_trl %>%
+  group_by(site, person, targ_side_rel) %>%
   summarise(median_rt = median(rt),
-            accuracy = mean(accurate), .groups = "drop") %>%
-  mutate(targ_side_rel = fct_relevel(targ_side_rel, "absent"))
+            accuracy = mean(accuracy), 
+            .groups = "drop") %>%
+  mutate(targ_side_rel = fct_relevel(targ_side_rel, "absent")) -> dat_rt_acc
 
 # plot
 ggplot(dat_rt_acc, aes(x = median_rt, y = accuracy, colour = site)) + 
@@ -77,14 +81,16 @@ dat_rt_acc %>%
   filter(!(person %in% peeps_to_remove)) -> dat_rt_acc
 
 # go back and remove from the larger dataset of fixations
-dat %>% filter(!(person %in% peeps_to_remove)) -> dat
+dat_fix %>% filter(!(person %in% peeps_to_remove)) -> dat_fix
 
 rm(to_remove)
 ```
 
 This gives `r length(peeps_to_remove)` participants to remove, leaving us with `r length(unique(dat_rt_acc$person))` participants left (for the visual search part of the experiment).
 
-Now let's do a final plot of accuracy and reaction time
+THIS NEEDS DONE LATER ONCE WE HAVE THE PRECRASTINATION DATA MERGED WITH IT
+
+Now let's do a final plot of accuracy and reaction time:
 
 ```{r}
 ggplot(dat_rt_acc, aes(x = targ_side_rel, y = accuracy)) + 
@@ -106,14 +112,15 @@ Now to compute our search strategy metric
 ```{r}
 # classify every fixation as homo (right), central, or hetro (left)
 centralWidth = 64 #change to 1 visual degree
-dat$side <- 'central'
-dat$x <- dat$x_flip
+dat_fix$side <- 'central'
+dat_fix$x <- dat_fix$x_flip
 
-dat$side[which(dat$x < (0 - centralWidth/2))] = "hard"
-dat$side[which(dat$x > (0 + centralWidth/2))] = "easy"
-dat$side = as.factor(dat$side)
+dat_fix$side[which(dat_fix$x < (0 - centralWidth/2))] = "hard"
+dat_fix$side[which(dat_fix$x > (0 + centralWidth/2))] = "easy"
+dat_fix$side = as.factor(dat_fix$side)
 
-dat %>% filter(side != "central",
+dat_fix %>% left_join(dat_trl, by = c("person", "trial", "targ_side_rel")) %>%
+  filter(side != "central",
               n < 6, n > 1, 
               targ_side_rel == "absent",
               accuracy == 1) %>% 
@@ -129,13 +136,68 @@ dat %>% filter(side != "central",
 dat_strat %>% group_by(person) %>%
   summarise(prop_hard = mean(prop_hard), .groups = "drop") %>%
 full_join(dat_rt_acc, by = c("person")) %>%
-  mutate(targ_side_rel = fct_relevel(targ_side_rel, "easy","hard")) -> dat_rt_acc
+  mutate(targ_side_rel = fct_relevel(targ_side_rel, "easy","hard")) -> dat_shls
 
-write_csv(dat_rt_acc, "scratch/dat_rt_acc_strat.csv")
+write_csv(dat_shls, "scratch/dat_rt_acc_strat.csv")
 ```
 
 # Pre-crastination
 
+## Do people pre-crastinate?
+
+```{r}
+dat <- read_csv("../data/pre_crastinate.csv", col_types = "iif") 
+
+summary(dat)
+```
+
+We have data from `r length(dat)/6` people and no missing data. 
+
+First, report number of people who *double pre-crastinate*:
+
+```{r}
+dat %>% filter(choice == "double_pre_cra") %>% 
+  group_by(person, site) %>%
+  summarise(n_trials_precrastinated = n(),
+            .groups = "drop") %>%
+  group_by(site, n_trials_precrastinated) %>%
+  summarise(num_people = n(), 
+            .groups = "drop") -> dpc
+
+knitr::kable(dpc)
+```
+
+We find that `r sum(dpc$num_people)` out of `r length(unique(dat$person))` participants *double pre-crastinated* at least once. Out of these, `r filter(dpc, n_trials_precrastinated==6)$num_people` did so on all six trials.
+
+As this is another form of pre-crasination, we will not distinguish between these participants and those who pre-crastinate normally. 
+
+```{r}
+rm(dpc)
+```
+
+```{r}
+dat %>% 
+  group_by(person, site) %>%
+  summarise(
+    sensible = sum(choice == "sensible"),
+    pre_crastinate = sum(choice != "sensible")) %>%
+  mutate(
+    classification = case_when(
+      sensible > 4 ~ "no",
+      sensible < 3 ~ "yes",
+      TRUE ~ "intermediate"),
+    classification = as_factor(classification),
+    classification = fct_relevel(classification, 
+                                 "no", "intermediate", "yes")) %>%
+  select(person, site,
+         n_pc = pre_crastinate, 
+         pre_crastinate = "classification") %>%
+  full_join(dat_shls) %>% na.omit -> dat
+
+write_csv(dat, "scratch/pre_crastinate_clean.csv")
+```
+
+We have `r length(unique(dat$person))` people with data for both visual search and pre-crastination. 
 
 
 # Personality
