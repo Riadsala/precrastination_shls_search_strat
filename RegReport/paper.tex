@@ -174,9 +174,9 @@ Participants will be allowed to skip questions they do not wish to answer. For a
 
 \subsection{Planned Analysis}
 
-The aim of this experiment is to determine if there is a relationship between pre-crastination and the sub-optimal behaviour we observe in the split-half visual search task. Following \cite{nowakowska2017, clarke2019}, each participant's strategy will be represented by the proportion of tfixations two-through-five directed to the difficult half of the search area. We will use a Bayesian approach to estimate the extent to which performance in the pre-crastination bucket task is predictive of visual search strategy. Our approach to Bayesian modelling will follow the advice given in \cite{mcelreath2016}, with models fitted using R \cite{r2019} and Stan \cite{carpenter2017stan}. 
+The aim of this experiment is to determine if there is a relationship between pre-crastination and the sub-optimal behaviour we observe in the split-half visual search task. Following \cite{nowakowska2017, clarke2019}, each participant's strategy will be represented by the proportion of fixations two-through-five directed to the difficult half of the search area. We will use a Bayesian approach to estimate the extent to which performance in the pre-crastination bucket task is predictive of visual search strategy. Our approach to Bayesian modelling will follow the advice given in \cite{mcelreath2016}, with models fitted using R \cite{r2019} and Stan \cite{carpenter2017stan}. 
 
-As our independent variable is a proportion, we will fit a model using beta regression \cite{ferrari2004beta} with a logit link for for $\mu$ (mean) and a log link for $\phi$ (precision). We will use conservative priors: $\beta \sim\mathcal{N}(0, 0.50)$ and $\gamma \sim\mathcal{N}(0, 1)$ (where $\beta$ and $\gamma$ are the coefficients for $mu$ and $\gamma$ respectively). This means that we are assuming that the mean of each group is 0.50, with a $95\%$ HPDI $= [0.27, 0.73]$\footnote{For comparison, the mean strategy score for the participants in \cite{nowakowska2017} with $n=14$ is 0.58, with a range of $[0.10, 0.99]$. Similarly, \cite{clarke2019} ($n=57$) found a mean of 0.60 with a range of $[0.06, 0.98]$.}. Our prior for the difference between groups is $\beta \sim\mathcal{N}(0, 0.50)$. We have included pilot data (above) in to demonstrate our planned analysis. We have previously used this analysis approach with this paradigm to explore the effect of motivation on visual search strategy \cite{james2019}.
+As our independent variable is a proportion, we will fit a model using beta regression \cite{ferrari2004beta} with a logit link for for $\mu$ (mean) and a log link for $\phi$ (precision). We will use conservative priors: $\beta \sim\mathcal{N}(0, 0.50)$ and $\gamma \sim\mathcal{N}(0, 1)$ (where $\beta$ and $\gamma$ are the coefficients for $mu$ and $\gamma$ respectively). This means that we are assuming that the mean of each group is 0.50, with a $95\%$ HPDI $= [0.27, 0.73]$\footnote{For comparison, the mean strategy score for the participants in \cite{nowakowska2017} with $n=14$ is 0.58, with a range of $[0.10, 0.99]$. Similarly, \cite{clarke2019} ($n=57$) found a mean of 0.60 with a range of $[0.06, 0.98]$.}. Our prior for the difference between groups is $\beta \sim\mathcal{N}(0, 0.50)$. We have included pilot data (above) to demonstrate our planned analysis. We have previously used this analysis approach with this paradigm to explore the effect of motivation on visual search strategy \cite{james2019}.
 
 We will also measure the relationship between the personality measures and tendency to pre-crastinate, using similar methods to those outlined above. If our measures of pre-crastination turn out to be mainly binary, then we will use Bayesian logistic regression to measure the relationship, otherwise, we will report an $R^2$ statistic. 
 
@@ -184,16 +184,16 @@ We will also measure the relationship between the personality measures and tende
 
 \subsection{Exploratory Analysis}
 
-The main (pre-registered) hypothesis motivating this experiment is that participants who pre-crastinate will also be sub-optimal (in terms of making more early eye movements to the homogeneous half of the display) in the split-half visual search task. After carrying out our pilot experiment, it looks like there may be also be a difference in speed-accuracy trade-offs. If this (or any other differences in eye movements) appears to be an interesting effect after we collect our full dataset, we will carry out suitable exploratory analysis. We will also investigate the possibility of more further links between the personality measures, pre-crastination and visual search paradigm. 
+The main (pre-registered) hypothesis motivating this experiment is that participants who pre-crastinate will also be sub-optimal (in terms of making more early eye movements to the homogeneous half of the display) in the split-half visual search task. After carrying out our pilot experiment, it looks like there may be also be a difference in speed-accuracy trade-offs. If this (or any other differences in eye movements) appears to be an interesting effect after we collect our full dataset, we will carry out suitable exploratory analysis. We will also investigate the possibility of further links between the personality measures, pre-crastination and visual search. 
 
 \section{Results}
 
-We collected data from a grand total of XXX participants, xxx of which failed to meet out inclusion criteria\footnote{further details available in supplementary materials}. This leaves us with 200 participants for our analysis.
+We collected data from a grand total of XXX participants. xxx of these participants failed to meet our inclusion criteria for the visual search task\footnote{further details available in supplementary materials}. This leaves us with 201 participants with visual search data. XXX participants completed the precrastination task (one participant was excused from this part of the experiment because of a brokem leg, and another for an unspecified reason). XXX participants completed the personality questionnaires (XXX participants had blank or otherwise unusable data).
 
 \subsection{Visual Search}
 
 Each participant’s median reaction time and accuracy was computed for the split-half visual
-search task, presented in Figure \ref{fig:exp2_summary} and are broadly in-line with those that we have seen in previous uses of this paradigm. More importantly, we see large variation in search strategy (\ref{fig:exp2_strat_summary}(a), replicating previous results.  
+search task, presented in Figure \ref{fig:exp2_summary}. The results are broadly in-line with those that we have seen in previous uses of this paradigm. More importantly, we see large variation in search strategy (\ref{fig:exp2_strat_summary}(a), replicating previous results.  
 
 \begin{figure}[t]
   \centering  
@@ -205,7 +205,7 @@ search task, presented in Figure \ref{fig:exp2_summary} and are broadly in-line 
 
 \subsection{Pre-crastination}
 
-The range of precrastination behaviours is shown in Figure (\ref{fig:exp2_strat_summary}(b). The majority of participants clearly either pre-crastinated (117, $58.5\%$) or not (71, $35.5\%$) with only a small minority (11, $5.5\%$) following an intermediate strategy\footnote{Two participants had missing data for this section of the experiment. One due to having a broken leg, the other for an unspecified reason}. As such, we will treat pre-crastination as a two-level factor and exclude participants exhibiting intermediate behaviours. 
+The range of precrastination behaviours is shown in Figure (\ref{fig:exp2_strat_summary}(b). The majority of participants clearly either pre-crastinated (117, $58.5\%$) or not (71, $35.5\%$) with only a small minority (11, $5.5\%$) following an intermediate strategy. As such, we will treat pre-crastination as a two-level factor and exclude participants exhibiting intermediate behaviours. 
 
 
 \begin{figure}[t]
@@ -218,7 +218,7 @@ The range of precrastination behaviours is shown in Figure (\ref{fig:exp2_strat_
 
 \subsection{Planned Analysis}
 
-The first step of our planned analysis is to test the hypothesis that there is a difference in  visual search strategy between those participants who pre-crastinated and those who did not. As registered, we fit a Bayesian beta regression model, the results of which are displayed in Figure \ref{fig:full_exp_strategy}. There is little-to-no evidence for a difference between the two groups, ($p(\delta >0| X)  =0.50$). As such, our hypothesis 2 is somewhat redundant, but we report the $95\%$ HPDI $= [-0.0465, 0.0467$] for completeness sake.
+The first step of our planned analysis is to test the hypothesis that there is a difference in  visual search strategy between those participants who pre-crastinated and those who did not. As registered, we fit a Bayesian beta regression model, the results of which are displayed in Figure \ref{fig:full_exp_strategy}. There is little-to-no evidence for a difference between the two groups, ($p(\delta >0| X)  =0.50$). This lack of differences makes hypothesis ii (that the effect size will be in line with the pilot data) redundant, but we report the $95\%$ HPDI $= [-0.0465, 0.0467$] for completeness sake.
 
 \begin{figure}[t]
   \centering  
@@ -228,31 +228,24 @@ The first step of our planned analysis is to test the hypothesis that there is a
   \label{fig:full_exp_strategy}
 \end{figure}
 
-Our final registered hypothesis concerns the relationship between pre-crastination and conscientiousness. HOW SHOULD I CALCULATE THIS?
+Our final registered hypothesis concerns the relationship between pre-crastination and conscientiousness. In line with the visual search analysis, we treated precrastination as a binary variable (excluding intermediate participants). The results of which are displayed in Figure X. As is clear from the figure, there is little difference in conscientiousness between people who consistently precrastinated in the bucket task versus those who consistently picked up the farther bucket first. Because this is inconsistent with previous results, to be more confident in this result we ran a second analysis with precrastination coded from 0 to 6, in terms of how many trials on which the participant precrastinated. The results were...  [DOES THAT WORK...?]
 
 
 \subsubsection{Discussion}
 
-We found no evidence for any of our registered hypothesis. 
+We met all outcome-neutral conditions and acquired a sample sufficient in size and quality to test the three hypotheses. As with the pilot data, the larger sample demonstated that precrastination behaviour is common, with more than half the participants picking up the close bucket first. We also replicated the wide range of variation between individuals in visual search effiency. We found no evidence for a consistent relationship between visual search effiency and precrastination, however, and no relationship between either measure and conscientiousness. Therefore, no evidence in favor of our registered hypotheses resulted from this experiment. 
 
 \subsection{Exploratory Analysis}
 
-We now investigate whether our data suggests any new hypotheses that could be of interest to other researchers. 
-
-\subsubsection{Self Report Strategies}
-
-When carrying out the personality measures (after having completed both the visual search and the pre-crastination parts of the experiment), we asked participants if they followed a WHAT WAS THE ACTUAL WORDING HERE consistent strategy in either or both tasks. We find that $61
-\%$ and $74\%$ of participants report that they followed a strategy in the visual search and pre-crastination tasks respectively. 
-
-
-
+We now investigate whether our data suggests any new hypotheses that could be of interest to other researchers.
 
 \subsubsection{Personality and Visual Search Strategy}
 
-
 \subsubsection{Personality and Pre-crastination}
 
+\subsubsection{Other measures}
 
+In addition to the registered measures, for efficiency we collected a range of other demographic characteristics and free-report measures from our participants. These are outside the scope of the pre-registration we have presented in this paper, so a full exploration of these additional variables and their relationship to visual search and precrastination will be presented elsewhere. In the interest of open science, however, and to avoid possible confusion by separating or duplicating data, the full set of data analysed in this pre-registration is presented along with these additional variables here: [link to data]. We request anyone wanting to use the data in this repository to contact the corresponding author and to reference... what? this paper? We'll need to write up a brief report about the data and submit it so people have something to reference. Maybe Anna could make a start on this??
 
 
 \section{General Discussion}
