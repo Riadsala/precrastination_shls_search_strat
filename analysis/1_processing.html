@@ -302,17 +302,44 @@ knitr::kable(dpc)</code></pre>
   select(person, site,
          n_pc = pre_crastinate, 
          pre_crastinate = &quot;classification&quot;) %&gt;%
-  full_join(dat_shls) %&gt;% na.omit -&gt; dat</code></pre>
+  full_join(dat_shls) -&gt; dat</code></pre>
 <pre><code>## `summarise()` has grouped output by &#39;person&#39;. You can override using the
 ## `.groups` argument.
 ## Joining, by = c(&quot;person&quot;, &quot;site&quot;)</code></pre>
-<pre class="r"><code>write_csv(dat, &quot;scratch/pre_crastinate_clean.csv&quot;)</code></pre>
-<p>We have 199 people with data for both visual search and pre-crastination.</p>
 </div>
 </div>
 <div id="personality" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Personality</h1>
-<p>Read in personality data and compute overall scores</p>
+<p>Read in personality data and compute overall scores.</p>
+<pre class="r"><code>dat_p &lt;- read_csv(&quot;../data/personsonality_q.csv&quot;) </code></pre>
+<pre><code>## Rows: 306 Columns: 137
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (17): bead_colour, Vsearch_Strategy, Bucket_Strategy, Gender, Ethnicity...
+## dbl (120): person, n_beads, Duration_in_Seconds, Vsearch_YesNo, Bucket_YesNo...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code># creating list of questions
+procras_qs &lt;- names(dat_p)[str_detect(names(dat_p), &quot;ProScale&quot;)]
+bfi_qs &lt;-     names(dat_p)[str_detect(names(dat_p), &quot;BFI&quot;)]
+bis_qs &lt;-     names(dat_p)[str_detect(names(dat_p), &quot;BIS&quot;)]
+
+# variables to reverse code
+rev_code &lt;- c(&quot;BFI2_03&quot;, &quot;BFI2_04&quot;, &quot;BFI2_05&quot;, &quot;BFI2_08&quot;, &quot;BFI2_09&quot;, &quot;BFI2_11&quot;, 
+              &quot;BFI2_12&quot;, &quot;BFI2_16&quot;, &quot;BFI2_17&quot;, &quot;BFI2_22&quot;, &quot;BFI2_23&quot;, &quot;BFI2_24&quot;, 
+              &quot;BFI2_25&quot;, &quot;BFI2_26&quot;, &quot;BFI2_28&quot;, &quot;BFI2_29&quot;, &quot;BFI2_30&quot;, &quot;BFI2_31&quot;, 
+              &quot;BFI2_36&quot;, &quot;BFI2_37&quot;, &quot;BFI2_42&quot;, &quot;BFI2_44&quot;, &quot;BFI2_45&quot;, &quot;BFI2_47&quot;, 
+              &quot;BFI2_48&quot;, &quot;BFI2_49&quot;, &quot;BFI2_50&quot;, &quot;BFI2_51&quot;, &quot;BFI2_55&quot;, &quot;BFI2_58&quot;, 
+              &quot;ProScale_03&quot;, &quot;ProScale_04&quot;, &quot;ProScale_06&quot;, &quot;ProScale_08&quot;, &quot;ProScale_11&quot;, 
+              &quot;ProScale_13&quot;, &quot;ProScale_14&quot;, &quot;ProScale_15&quot;, &quot;ProScale_18&quot;, &quot;ProScale_20&quot;, 
+              &quot;BIS11_01&quot;, &quot;BIS11_07&quot;, &quot;BIS11_08&quot;, &quot;BIS11_09&quot;, &quot;BIS11_10&quot;, &quot;BIS11_12&quot;, 
+              &quot;BIS11_13&quot;, &quot;BIS11_15&quot;, &quot;BIS11_20&quot;, &quot;BIS11_29&quot;, &quot;BIS11_30&quot;)
+
+for (var in rev_code) {
+  dat_p &lt;- mutate(dat_p, &quot;{var}r&quot; := max(!!as.name(var), na.rm = T) - !!as.name(var) + 1) 
+}
+rm(var)</code></pre>
 </div>
 
 

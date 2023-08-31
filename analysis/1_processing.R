@@ -61,27 +61,6 @@ write_csv(dat2, "scratch/data_per_person.txt")
 
 # 3. Personality
 
-# creating list of questions
-procras_qs <- names(d_new)[str_detect(names(d_new), "ProScale")]
-bfi_qs <-     names(d_new)[str_detect(names(d_new), "BFI")]
-bis_qs <-     names(d_new)[str_detect(names(d_new), "BIS")]
-
-# variables to reverse code
-rev_code <- c("BFI2_03", "BFI2_04", "BFI2_05", "BFI2_08", "BFI2_09", "BFI2_11", 
-              "BFI2_12", "BFI2_16", "BFI2_17", "BFI2_22", "BFI2_23", "BFI2_24", 
-              "BFI2_25", "BFI2_26", "BFI2_28", "BFI2_29", "BFI2_30", "BFI2_31", 
-              "BFI2_36", "BFI2_37", "BFI2_42", "BFI2_44", "BFI2_45", "BFI2_47", 
-              "BFI2_48", "BFI2_49", "BFI2_50", "BFI2_51", "BFI2_55", "BFI2_58", 
-              "ProScale_03", "ProScale_04", "ProScale_06", "ProScale_08", "ProScale_11", 
-              "ProScale_13", "ProScale_14", "ProScale_15", "ProScale_18", "ProScale_20", 
-              "BIS11_01", "BIS11_07", "BIS11_08", "BIS11_09", "BIS11_10", "BIS11_12", 
-              "BIS11_13", "BIS11_15", "BIS11_20", "BIS11_29", "BIS11_30")
-
-for (var in rev_code) {
-  d_new <- mutate(d_new, "{var}r" := max(!!as.name(var), na.rm = T) - !!as.name(var) + 1) 
-}
-rm(var)
-
 
 
 
