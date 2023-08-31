@@ -1,0 +1,146 @@
+---
+title: "Visual Search and Pre-crastination"
+author: "Alasdair D.F. Clarke"
+date: '2022-05-30'
+output:
+  tufte::tufte_html:
+    number_sections: true
+    fig_height: 3
+    link-citations: yes  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(digits = 3)
+set.seed(2022)
+```
+
+```{r, message=FALSE}
+# attach packages
+#library(rethinking)
+library(tidyverse)
+library(patchwork)
+#library(brms)
+library(rstan)
+library(tidybayes)
+library(binom)
+```
+
+```{r}
+# set ggplot2 options
+theme_set(ggthemes::theme_tufte() + 
+            theme(plot.background = element_rect(fill = "#fffff8", 
+                                                 colour = "#fffff8")))
+
+our_cols <- c("#1b9e77", "#7570b3")
+options(ggplot2.discrete.fill = our_cols ,
+        ggplot2.discrete.colour = our_cols)
+```
+
+# Overview of Visual Search Task
+
+Import data
+```{r}
+dat <- read_csv("../data/processed_fix_data.txt", col_types = "fddddddddf")
+```
+
+## Reaction Time and Accuracy
+
+```{r}
+dat_rt_acc <- dat %>%
+  group_by(site, person, targ_side_rel, trial) %>%
+  summarise(rt = unique(rt),
+            accurate = unique(accuracy), 
+            .groups = "drop_last") %>%
+  summarise(median_rt = median(rt),
+            accuracy = mean(accurate), .groups = "drop") %>%
+  mutate(targ_side_rel = fct_relevel(targ_side_rel, "absent"))
+
+# plot
+ggplot(dat_rt_acc, aes(x = median_rt, y = accuracy, colour = site)) + 
+  geom_point(alpha = 0.5) +
+  scale_x_log10() + 
+  geom_hline(yintercept = 0.75, linetype = 2) + 
+  facet_wrap(~targ_side_rel)
+```
+
+Our pre-registered exclusion rule was to remove anybody achieving less than 75% accuracy in the *absent* and *easy* conditions.
+
+```{r}
+dat_rt_acc %>% 
+  filter(targ_side_rel != "hard", accuracy < 0.75) %>%
+  select(person) -> to_remove
+
+peeps_to_remove <- unique(to_remove$person)
+
+dat_rt_acc %>% 
+  filter(!(person %in% peeps_to_remove)) -> dat_rt_acc
+
+# go back and remove from the larger dataset of fixations
+dat %>% filter(!(person %in% peeps_to_remove)) -> dat
+
+rm(to_remove)
+```
+
+This gives `r length(peeps_to_remove)` participants to remove, leaving us with `r length(unique(dat_rt_acc$person))` participants left (for the visual search part of the experiment).
+
+Now let's do a final plot of accuracy and reaction time
+
+```{r}
+ggplot(dat_rt_acc, aes(x = targ_side_rel, y = accuracy)) + 
+         geom_boxplot() -> plt_acc
+
+ggplot(dat_rt_acc, aes(x = targ_side_rel, y = median_rt)) + 
+         geom_boxplot() +
+  scale_y_log10() -> plt_rt
+
+plt_acc + plt_rt
+
+rm(plt_acc, plt_rt)
+```
+
+## Search Strategy
+
+Now to compute our search strategy metric
+
+```{r}
+# classify every fixation as homo (right), central, or hetro (left)
+centralWidth = 64 #change to 1 visual degree
+dat$side <- 'central'
+dat$x <- dat$x_flip
+
+dat$side[which(dat$x < (0 - centralWidth/2))] = "hard"
+dat$side[which(dat$x > (0 + centralWidth/2))] = "easy"
+dat$side = as.factor(dat$side)
+
+dat %>% filter(side != "central",
+              n < 6, n > 1, 
+              targ_side_rel == "absent",
+              accuracy == 1) %>% 
+  group_by(person, n) %>% 
+  summarise(
+    prop_hard = mean(side == "hard"), 
+    n_trials = length(trial),
+    lower = binom.confint(prop_hard*n_trials, n_trials, method = 'wilson')$lower,
+    upper = binom.confint(prop_hard*n_trials, n_trials, method = 'wilson')$upper,
+    .groups = "drop") -> dat_strat
+
+# also calculate aggregate overall strat and put with rt and acc
+dat_strat %>% group_by(person) %>%
+  summarise(prop_hard = mean(prop_hard), .groups = "drop") %>%
+full_join(dat_rt_acc, by = c("person")) %>%
+  mutate(targ_side_rel = fct_relevel(targ_side_rel, "easy","hard")) -> dat_rt_acc
+
+write_csv(dat_rt_acc, "scratch/dat_rt_acc_strat.csv")
+```
+
+# Pre-crastination
+
+
+
+# Personality
+
+Read in personality data and compute overall scores
+
+
+
