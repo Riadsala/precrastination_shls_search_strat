@@ -290,7 +290,8 @@ knitr::kable(dpc)</code></pre>
   group_by(person, site) %&gt;%
   summarise(
     sensible = sum(choice == &quot;sensible&quot;),
-    pre_crastinate = sum(choice != &quot;sensible&quot;)) %&gt;%
+    pre_crastinate = sum(choice != &quot;sensible&quot;),
+    .groups = &quot;drop&quot;) %&gt;%
   mutate(
     classification = case_when(
       sensible &gt; 4 ~ &quot;no&quot;,
@@ -301,18 +302,14 @@ knitr::kable(dpc)</code></pre>
                                  &quot;no&quot;, &quot;intermediate&quot;, &quot;yes&quot;)) %&gt;%
   select(person, site,
          n_pc = pre_crastinate, 
-         pre_crastinate = &quot;classification&quot;) %&gt;%
-  full_join(dat_shls) -&gt; dat</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;person&#39;. You can override using the
-## `.groups` argument.
-## Joining, by = c(&quot;person&quot;, &quot;site&quot;)</code></pre>
+         pre_crastinate = &quot;classification&quot;) -&gt; dat_pc</code></pre>
 </div>
 </div>
 <div id="personality" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Personality</h1>
 <p>Read in personality data and compute overall scores.</p>
 <pre class="r"><code>dat_p &lt;- read_csv(&quot;../data/personsonality_q.csv&quot;) </code></pre>
-<pre><code>## Rows: 306 Columns: 137
+<pre><code>## Rows: 304 Columns: 137
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
 ## chr  (17): bead_colour, Vsearch_Strategy, Bucket_Strategy, Gender, Ethnicity...
@@ -339,7 +336,81 @@ rev_code &lt;- c(&quot;BFI2_03&quot;, &quot;BFI2_04&quot;, &quot;BFI2_05&quot;, 
 for (var in rev_code) {
   dat_p &lt;- mutate(dat_p, &quot;{var}r&quot; := max(!!as.name(var), na.rm = T) - !!as.name(var) + 1) 
 }
-rm(var)</code></pre>
+rm(var)
+
+# create Big 5 measures
+# 
+# Extraversion: 1, 6, 11R, 16R, 21, 26R, 31R, 36R, 41, 46, 51R, 56
+# Agreeableness: 2, 7, 12R, 17R, 22R, 27, 32, 37R, 42R, 47R, 52, 57
+# Conscientiousness: 3R, 8R, 13, 18, 23R, 28R, 33, 38, 43, 48R, 53, 58R
+# Negative Emotionality: 4R, 9R, 14, 19, 24R, 29R, 34, 39, 44R, 49R, 54, 59
+# Open-Mindedness: 5R, 10, 15, 20, 25R, 30R, 35, 40, 45R, 50R, 55R, 60
+
+dat_p %&gt;% select(person, starts_with(&quot;BFI2_&quot;)) %&gt;%
+  pivot_longer(-person, names_to = &quot;item&quot;, values_to = &quot;resp&quot;) %&gt;%
+  separate(item, into = c(&quot;BFI&quot;, &quot;item&quot;)) %&gt;%
+  select(-BFI) %&gt;%
+  pivot_wider(person, names_from = &quot;item&quot;, values_from = &quot;resp&quot;) %&gt;%
+  mutate(extraversion = 
+           rowMeans(select(., &#39;01&#39;, &#39;06&#39;, &#39;11r&#39;, &#39;21&#39;, &#39;26r&#39;, &#39;31r&#39;, &#39;36r&#39;, &#39;41&#39;, &#39;46&#39;, &#39;51r&#39;, &#39;56&#39;)),
+         agreeableness = 
+           rowMeans(select(., &#39;02&#39;, &#39;07&#39;, &#39;12r&#39;, &#39;17r&#39;, &#39;22r&#39;, &#39;27&#39;, &#39;32&#39;, &#39;37r&#39;, &#39;42r&#39;, &#39;47r&#39;, &#39;52&#39;, &#39;57&#39;)),
+         conscientiousness = 
+           rowMeans(select(., &#39;03r&#39;, &#39;08r&#39;, &#39;13&#39;, &#39;18&#39;, &#39;23r&#39;, &#39;28r&#39;, &#39;33&#39;, &#39;38&#39;, &#39;43&#39;, &#39;48r&#39;, &#39;53&#39;, &#39;58r&#39;)),
+         negative_emo = 
+           rowMeans(select(., &#39;04r&#39;, &#39;09r&#39;, &#39;14&#39;, &#39;19&#39;, &#39;24r&#39;, &#39;29r&#39;, &#39;34&#39;, &#39;39&#39;, &#39;44r&#39;, &#39;49r&#39;, &#39;54&#39;, &#39;59&#39;)),
+         open_mindedness = 
+           rowMeans(select(., &#39;05r&#39;, &#39;10&#39;, &#39;15&#39;, &#39;20&#39;, &#39;25r&#39;, &#39;30r&#39;, &#39;35&#39;, &#39;40&#39;, &#39;45r&#39;, &#39;50r&#39;, &#39;55r&#39;, &#39;60&#39;))) %&gt;%
+  select(person = &quot;person&quot;, extraversion, agreeableness, conscientiousness, negative_emo, open_mindedness) -&gt; d_BFI</code></pre>
+<pre><code>## Warning: Specifying the `id_cols` argument by position was deprecated in tidyr 1.3.0.
+## ℹ Please explicitly name `id_cols`, like `id_cols = person`.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre class="r"><code># create procrastination variable
+procras_qs_rev &lt;- paste0(procras_qs[which(procras_qs %in% rev_code)], &quot;r&quot;)
+procras_qs_fwd &lt;- procras_qs[which(!(procras_qs %in% rev_code))]
+procras_qs &lt;- c(procras_qs_fwd, procras_qs_rev)
+rm(procras_qs_fwd, procras_qs_rev)
+
+dat_p %&gt;% pivot_longer(procras_qs, names_to = &quot;ProscaleID&quot;, values_to = &quot;score&quot;) %&gt;%
+  group_by(person) %&gt;%
+  summarise(procrastination =  mean(score)) %&gt;%
+  rename(person = &quot;person&quot;) %&gt;%
+  full_join(d_BFI, by = &quot;person&quot;) -&gt; dat_p2</code></pre>
+<pre><code>## Warning: Using an external vector in selections was deprecated in tidyselect 1.1.0.
+## ℹ Please use `all_of()` or `any_of()` instead.
+##   # Was:
+##   data %&gt;% select(procras_qs)
+## 
+##   # Now:
+##   data %&gt;% select(all_of(procras_qs))
+## 
+## See &lt;https://tidyselect.r-lib.org/reference/faq-external-vector.html&gt;.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.</code></pre>
+<pre class="r"><code>rm(d_BFI)
+
+
+dat_p %&gt;% select(person, starts_with(&quot;BIS11_&quot;)) %&gt;%
+  pivot_longer(-person, names_to = &quot;item&quot;, values_to = &quot;resp&quot;) %&gt;%
+  separate(item, into = c(&quot;BIS&quot;, &quot;item&quot;)) %&gt;%
+  select(-BIS) %&gt;%
+  pivot_wider(id_cols = person, names_from = &quot;item&quot;, values_from = &quot;resp&quot;) %&gt;%
+  mutate(BIStotal = 
+           rowMeans(select(., &#39;01r&#39;, &#39;02&#39;, &#39;03&#39;, &#39;04&#39;, &#39;05&#39;, &#39;06&#39;, &#39;07r&#39;, &#39;08r&#39;, &#39;09r&#39;, &#39;10r&#39;, &#39;11&#39;, &#39;12r&#39;, &#39;13r&#39;, &#39;14&#39;, &#39;15r&#39;, &#39;16&#39;, &#39;17&#39;, &#39;18&#39;, &#39;19&#39;, &#39;20r&#39;, &#39;21&#39;, &#39;22&#39;, &#39;23&#39;, &#39;24&#39;, &#39;25&#39;, &#39;26&#39;, &#39;27&#39;, &#39;28&#39;, &#39;29r&#39;, &#39;30r&#39;)),
+         attentional_imp = 
+           rowMeans(select(., &#39;05&#39;, &#39;09r&#39;, &#39;11&#39;, &#39;20r&#39;, &#39;28&#39;, &#39;06&#39;, &#39;24&#39;, &#39;26&#39;)),
+         motor_imp = 
+           rowMeans(select(., &#39;02&#39;, &#39;03&#39;, &#39;04&#39;, &#39;17&#39;, &#39;19&#39;, &#39;22&#39;, &#39;25&#39;, &#39;16&#39;, &#39;21&#39;, &#39;23&#39;, &#39;30r&#39;)),
+         nonplan_imp = 
+           rowMeans(select(., &#39;01r&#39;, &#39;07r&#39;, &#39;08r&#39;, &#39;12r&#39;, &#39;13r&#39;, &#39;14&#39;, &#39;10r&#39;, &#39;15r&#39;, &#39;18&#39;, &#39;27&#39;, &#39;29r&#39;))) %&gt;%
+  select(person = &quot;person&quot;, BIStotal, attentional_imp, motor_imp, nonplan_imp)  %&gt;%
+  full_join(dat_p2, by = &quot;person&quot;) -&gt; dat_p2
+
+dat &lt;- full_join(dat_p2, dat_pc) </code></pre>
+<pre><code>## Joining, by = &quot;person&quot;</code></pre>
+<pre class="r"><code>write_csv(dat, &quot;scratch/prcrastination_and_personality.csv&quot;)</code></pre>
 </div>
 
 

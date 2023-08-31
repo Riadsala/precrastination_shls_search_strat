@@ -180,7 +180,8 @@ dat %>%
   group_by(person, site) %>%
   summarise(
     sensible = sum(choice == "sensible"),
-    pre_crastinate = sum(choice != "sensible")) %>%
+    pre_crastinate = sum(choice != "sensible"),
+    .groups = "drop") %>%
   mutate(
     classification = case_when(
       sensible > 4 ~ "no",
@@ -191,12 +192,9 @@ dat %>%
                                  "no", "intermediate", "yes")) %>%
   select(person, site,
          n_pc = pre_crastinate, 
-         pre_crastinate = "classification") %>%
-  full_join(dat_shls) -> dat
+         pre_crastinate = "classification") -> dat_pc
 
 ```
-
-
 
 # Personality
 
@@ -282,12 +280,9 @@ dat_p %>% select(person, starts_with("BIS11_")) %>%
   select(person = "person", BIStotal, attentional_imp, motor_imp, nonplan_imp)  %>%
   full_join(dat_p2, by = "person") -> dat_p2
 
-d_out2 <- full_join(d_out, d %>% rename(person = "person")) %>%
-  select(-c(LocationLatitude, LocationLongitude, 
-            ResponseId, Finished, Duration_in_Seconds, `Duration (in seconds)`,
-            StartTime, EndTime))
+dat <- full_join(dat_p2, dat_pc) 
 
-
+write_csv(dat, "scratch/prcrastination_and_personality.csv")
 
 ```
 
