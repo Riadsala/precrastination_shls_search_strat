@@ -1,0 +1,133 @@
+\begin{thebibliography}{99}
+
+\bibitem{najemnik-geisler2008}
+Najemnik J, Geisler WS. 2008  Eye movement statistics in humans are consistent
+  with an optimal search strategy. {\em Journal of Vision} \textbf{8}, 4--4.
+
+\bibitem{hoppe-rothkopf2019}
+Hoppe D, Rothkopf CA. 2019  Multi-step planning of eye movements in visual
+  search. {\em Scientific Reports} \textbf{9}, 144.
+
+\bibitem{clarke2016}
+Clarke AD, Green P, Chantler MJ, Hunt AR. 2016  Human search for a target on a
+  textured background is consistent with a stochastic model. {\em Journal of
+  Vision} \textbf{16}, 4--4.
+
+\bibitem{nowakowska2017}
+Nowakowska A, Clarke ADF, Hunt AR. 2017  Human visual search behaviour is far
+  from ideal. {\em Proceedings of the Royal Society B: Biological Sciences}.
+
+\bibitem{irons-leber2016}
+Irons JL, Leber AB. 2016  Choosing attentional control settings in a
+  dynamically changing environment. {\em Attention, Perception, \&
+  Psychophysics}.
+
+\bibitem{nowakowska2016}
+Nowakowska A, Clarke AD, Sahraie A, Hunt AR. 2016  Inefficient search
+  strategies in simulated hemianopia.. {\em Journal of Experimental Psychology:
+  Human Perception and Performance} \textbf{42}, 1858.
+
+\bibitem{irons-leber2018}
+Irons JL, Leber AB. 2018  Characterizing individual variation in the strategic
+  use of attentional control. {\em Journal of Experimental Psychology: Human
+  Perception and Performance} pp. 1--18.
+
+\bibitem{clarke2019}
+Clarke ADF, Irons JL, James W, Leber AB, Hunt AR. 2019  Stable individual
+  differences in strategies within, but not between, visual search tasks. {\em
+  preprint}.
+
+\bibitem{johannesson2017}
+J{\'o}hannesson {\'O}I, Kristj{\'a}nsson {\'A}, Thornton IM. 2017  Are Foraging
+  Patterns in Humans Related to Working Memory and Inhibitory Control?. {\em
+  Japanese Psychological Research} \textbf{59}, 152--166.
+
+\bibitem{rosenbaum2014}
+Rosenbaum DA, Gong L, Potts CA. 2014  Pre-Crastination: Hastening Subgoal
+  Completion at the Expense of Extra Physical Effort. {\em Psychological
+  Science} \textbf{25}, 1487--1496.
+PMID: 24815613.
+
+\bibitem{fournier2019task}
+Fournier LR, Coder E, Kogan C, Raghunath N, Taddese E, Rosenbaum DA. 2019
+  Which task will we choose first? Precrastination and cognitive load in task
+  ordering. {\em Attention, Perception, \& Psychophysics} \textbf{81},
+  489--503.
+
+\bibitem{wasserman2015}
+Wasserman EA, Brzykcy SJ. 2015  Pre-crastination in the pigeon. {\em
+  Psychonomic Bulletin \& Review} \textbf{22}, 1130--1134.
+
+\bibitem{funder2016}
+Funder D. 2016 {\em The Personality Puzzle: Seventh Edition}.
+WW Norton \& Co.
+
+\bibitem{rosenbaum2019}
+Rosenbaum DA, Fournier LR, Levy-Tzedek S, McBride DM, Rosenthal R, Sauerberger
+  K, VonderHaar RL, Wasserman EA, Zentall TR. 2019  Sooner Rather Than Later:
+  Precrastination Rather Than Procrastination. {\em Current Directions in
+  Psychological Science} p. 0963721419833652.
+
+\bibitem{sauerberger2019}
+Sauerberger K. 2019 {\em When Doing Things Later is the Best Choice:
+  Precrastination as an Individual Difference}.
+PhD thesis University of California.
+
+\bibitem{fraley2014}
+Fraley RC, Vazire S. 2014  The N-pact factor: Evaluating the quality of
+  empirical journals with respect to sample size and statistical power. {\em
+  PloS one} \textbf{9}, e109019.
+
+\bibitem{pwr}
+Champely S. 2018 {\em pwr: Basic Functions for Power Analysis}.
+R package version 1.2-2.
+
+\bibitem{brainard1997}
+Brainard DH. 1997  The psychophysics toolbox. {\em Spatial Vision} \textbf{10},
+  433--436.
+
+\bibitem{cornelissen2002}
+Cornelissen FW, Peters EM, Palmer J. 2002  The Eyelink Toolbox: eye tracking
+  with MATLAB and the Psychophysics Toolbox. {\em Behavior Research Methods,
+  Instruments, \& Computers} \textbf{34}, 613--617.
+
+\bibitem{soto2017}
+Soto CJ, John OP. 2017  The next Big Five Inventory (BFI-2): Developing and
+  assessing a hierarchical model with 15 facets to enhance bandwidth, fidelity,
+  and predictive power.. {\em Journal of personality and social psychology}
+  \textbf{113}, 117.
+
+\bibitem{patton1995}
+Patton JH, Stanford MS, Barratt ES. 1995  Factor structure of the Barratt
+  impulsiveness scale. {\em Journal of clinical psychology} \textbf{51},
+  768--774.
+
+\bibitem{lay1986}
+Lay CH. 1986  At last, my research article on procrastination. {\em Journal of
+  research in personality} \textbf{20}, 474--495.
+
+\bibitem{mcelreath2016}
+McElreath R. 2016 {\em Statistical Rethinking: A Bayesian Course with Examples
+  in R and Stan} vol. 122.
+CRC Press.
+
+\bibitem{r2019}
+{R Core Team}. 2019 {\em R: A Language and Environment for Statistical
+  Computing}.
+R Foundation for Statistical Computing Vienna, Austria.
+
+\bibitem{carpenter2017stan}
+Carpenter B, Gelman A, Hoffman MD, Lee D, Goodrich B, Betancourt M, Brubaker M,
+  Guo J, Li P, Riddell A. 2017  Stan: A probabilistic programming language.
+  {\em Journal of Statistical Software} \textbf{76}.
+
+\bibitem{ferrari2004beta}
+Ferrari S, Cribari-Neto F. 2004  Beta regression for modelling rates and
+  proportions. {\em Journal of applied statistics} \textbf{31}, 799--815.
+
+\bibitem{james2019}
+James WRG, Reuther J, Angus E, Clarke ADF, Hunt AR. 2019  Inefficient Eye
+  Movements: Gamification Improves Task Execution, But Not Fixation Strategy.
+  {\em Vision} \textbf{3}.
+
+\end{thebibliography}
