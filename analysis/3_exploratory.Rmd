@@ -20,7 +20,7 @@ set.seed(2022)
 library(rethinking)
 library(tidyverse)
 library(patchwork)
-library(binom)
+
 ```
 
 ```{r}
@@ -29,9 +29,6 @@ theme_set(ggthemes::theme_tufte() +
             theme(plot.background = element_rect(fill = "#fffff8", 
                                                  colour = "#fffff8")))
 
-our_cols <- c("#1b9e77", "#7570b3")
-options(ggplot2.discrete.fill = our_cols ,
-        ggplot2.discrete.colour = our_cols)
 ```
 
 
@@ -45,205 +42,53 @@ dat_p <- read_csv("scratch/prcrastination_and_personality.csv") %>%
   mutate(pre_crastinate = as_factor(pre_crastinate),
          pre_crastinate = fct_relevel(pre_crastinate, "no", "intermediate", "yes"))
 
+
+dat <- full_join(dat_s %>% filter(targ_side_rel == "absent"), 
+          dat_p, 
+          by = c("person", "site"))
 ```
 
-# Overview of measures
 
-## Visual Search Accuracy & Response Time
+# Calculate Correlations
 
 ```{r}
-# merge search with personality and precrastination data
-dat <- left_join(dat_s, dat_p) %>%
-  filter(!is.na(pre_crastinate))
+measures <- factor(1:10, labels = c("BIStotal", "attentional_imp", "motor_imp", "nonplan_imp",
+              "open_mindedness", "conscientiousness", "extraversion", "agreeableness", "negative_emo",
+              "procrastination"))
 
-dat %>% ggplot(aes(targ_side_rel, accuracy, fill = pre_crastinate)) +
-  geom_boxplot(alpha = 0.5) +
-    scale_x_discrete("trial type")  +
-  theme(legend.justification=c(0,0), legend.position=c(0,0))  -> plt_acc
+measures <- fct_rev(measures)
 
-dat %>% ggplot(aes(targ_side_rel, median_rt, fill = pre_crastinate)) +
-  geom_boxplot(alpha = 0.5) +
-  theme(legend.position = "none") + 
-  scale_x_discrete("trial type")  +
-  scale_y_log10("reaction time (seconds)")  -> plt_rt
+dps <- dat %>% filter(pre_crastinate != "intermediate")
 
-plt_acc + plt_rt
-
-ggsave("scratch/acc_main.pdf", plt_acc + theme_bw() + theme(legend.position = "none"), width = 4, height = 3)
-ggsave("scratch/rt_main.pdf", plt_rt  + theme_bw() + theme(legend.justification=c(1,0), legend.position=c(1,0)), width = 4, height = 3)
-
-```
-
-
-
-```{r}
-rm(plt_acc, plt_rt)
-```
-
-## Search Strategy & Pre-crastination 
-
-```{r}
-dat_s %>% 
-  group_by(person) %>%
-  summarise(search_strat = unique(prop_hard)) -> dat_strat 
-
-dat_strat %>%
-  ggplot(aes(search_strat)) + 
-  geom_histogram(breaks = seq(0.0, 1, 0.1), colour = "black") + 
-  scale_x_continuous("search strategy score") -> plt
-
-ggsave("scratch/strat_hist.pdf", plt + theme_bw() + theme(legend.position = "none"), width = 4, height = 3)
-
-```
-
-And now look at pre-crastination measure. 
-
-```{r}
-
-dat_p %>% ggplot(aes(x = n_pc)) +
-  geom_histogram(bins = 7, alpha = 0.67, colour = "black") +
-  scale_x_continuous("number of trials") + 
-  scale_fill_viridis_d() +
-  theme(legend.position = "none") -> plt1
-
-dat_p %>% ggplot(aes(x = pre_crastinate)) + 
-  geom_bar() +
-  scale_x_discrete("pre-crastination classification") + 
-  scale_fill_viridis_d() +
-  theme(legend.position = "none") -> plt2
-
-plt1 + plt2
-
-ggsave("scratch/pre_crastinate.pdf", plt2 + theme_bw(),  width = 4, height = 3)
-
-```
-
-We have replicated the original pre-crastination finding.... 
-
-```{r}
-n_row <- nrow(dat_p)
-
-dat_p %>% 
-  group_by(pre_crastinate) %>%
-  summarise(n = n(),
-            percentage = 100*n/n_row) %>%
-  knitr::kable()
-
-rm(n_row)
-```
-
-# Registered Analysis
-
-## Main Hypothesis
-
-Is there a link betweeen pre-crastination and visual search strategy
-
-### Pilot Data
-
-First, we will rerun the model with the old pilot data. This is to double check the analysis pipeline is working properly.
-
-```{r, results = "hide", message=FALSE, results = "hide"}
-source("my_model_functions.R")
-
-d_pilot <- read_csv("../pilot_experiment/level3_summary.csv",
-                    show_col_types = FALSE) %>%
-  mutate(pre_crastinate = as_factor(
-    ifelse(pre_crastinate == 0, "no", "yes"))) %>%
-  rename(search_strat = "opt_strat")
-
-m_pilot <- fit_model(d_pilot)
-```
-
-```{r}
-# generate prior only plot
-plt <- gen_plot_pred(d_pilot, m_pilot, TRUE)
-ggsave("scratch/pilot_prior_plot.pdf", plt, width = 5, height = 4)
-
-plt2 <- gen_plot_pred(d_pilot, m_pilot)
-
-plt + plt2
-ggsave("scratch/pilot_plot.pdf", plt2, width = 5, height = 4)
-```
-
-### Full Data
-
-Now run the model on the full data
-```{r, results = "hide"}
-d <- dat %>% select(prop_hard, pre_crastinate) %>%
-  filter(pre_crastinate != "intermediate") %>%
-  rename(search_strat = "prop_hard")
-
-
-m_full <- fit_model(d)
-```
-
-```{r}
-# generate prior only plot
-
-plt <- gen_plot_pred(dat, m_full)
-plt
-ggsave("scratch/post_plot.pdf", plt + theme(legend.position = "none"), width = 4, height = 3)
-```
-
-# Now compute some summaries of the model posterior:
-
-```{r}
-samples <- rstan::extract(m_full)
-
-pred_dat <- tibble(pre_crastinate = c(-0.5, 0.5))
-
-X = as.matrix(pred_dat)
-X <- cbind(1, X)
-
-# Look at prior predictions for mmu
-mu <- array(0, dim = c(100000, nrow(X)))
-for (ii in 1:100000) {
-	# generate a random beta from priors
-	beta <- as.vector(c(
-		rnorm(1, mean=0, sd=.5), 
-		rnorm(1, mean=0, sd=.1)
-		))
-	mu[ii, ] <- plogis(X %*% beta)
+get_rd_int <- function(measure) {
+  
+  r <- cor.test(dat$prop_hard, dat[[measure]])
+  
+  d <- t.test(dps[[measure]] ~ dps$pre_crastinate)
+  
+  d_out <- tibble(measure = measure,
+                  lower = c(r$conf.int[[1]], d$conf.int[[1]]),
+                  upper = c(r$conf.int[[2]], d$conf.int[[2]]),
+                  feature = c("search", "pre-crastination"))
+  return(d_out)
 }
 
+dr <- map_df(measures, get_rd_int)
 
-mu_df <- tibble(
-	pre_crastinate = rep(c("no", "yes", "difference"), each = 100000),
-	mu  = c(mu[,1], mu[,2], mu[,2] - mu[,1]))
+dr$col <- as_factor(rep(c(1,1,1,1,2,2,2,2,2,3), each = 2))
 
-
-HPDI(mu[,2] - mu[,1], 0.95)
-mean(abs(mu[,2] - mu[,1]) > 0.05)
-mean((mu[,2] - mu[,1]) > 0)
-```
-
-## Pre-crastination & Conscientiousness
-
-```{r}
-my_cols <-  c(viridis::viridis(3)[1], "#444444", viridis::viridis(3)[3], viridis::viridis(3)[2],  "#999999")
-
-dat_p %>% filter(!is.na(pre_crastinate), !is.na(conscientiousness)) %>%
-  ggplot(aes(pre_crastinate, conscientiousness, fill = pre_crastinate)) + 
-  geom_boxplot(alpha = 0.5) +
-  scale_fill_manual("pre-crastinate", values = my_cols) -> plt
+ggplot(dr, aes(xmin = lower, xmax = upper, y = measure, colour = col)) +
+  geom_linerange(linewidth = 2, alpha = 0.7) +
+  geom_vline(xintercept = 0, linetype = 2) + 
+  scale_x_continuous("effect size") +
+  ggthemes::scale_color_fivethirtyeight() +
+  theme(legend.position = "none") +
+  facet_wrap(~feature)  -> plt
 
 plt
 
-ggsave("scratch/pre_cras_consc.pdf", plt+theme_bw(), width = 4, height = 3)
-
-cor.test(dat_p$conscientiousness, dat_p$n_pc)
-
-# now to it with Bayes
-library(brms)
-
-m <- brm( conscientiousness ~ pre_crastinate, 
-         data = dat_p %>% filter(pre_crastinate %in% c("yes", "no")),
-               prior = c(prior(normal(0, 1), class = "Intercept"),
-                          prior(normal(0, 1), class = "b")))
-
-
-m <- brm( conscientiousness ~ n_pc, 
-         data = dat_p,
-               prior = c(prior(normal(0, 1), class = "Intercept"),
-                          prior(normal(0, 1), class = "b")))
+ggsave("scratch/exp_strat.pdf", plt + theme_bw()+
+  theme(legend.position = "none"), width = 6, height = 3)
+ggsave("scratch/exp_strat.png", plt + theme_bw()+
+  theme(legend.position = "none"), width = 6, height = 3)
 ```
