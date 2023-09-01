@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  1 SEP 2023 10:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  1 SEP 2023 12:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1303,19 +1303,29 @@ Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 [10 <../analysis/scratch/acc_main.pdf> <../analysis/scratch/rt_main.pdf> <../an
 alysis/scratch/strat_hist.pdf> <../analysis/scratch/pre_crastinate.pdf>]
-Underfull \hbox (badness 1242) in paragraph at lines 230--231
+<../analysis/scratch/post_plot.pdf, id=396, 289.08pt x 216.81pt>
+File: ../analysis/scratch/post_plot.pdf Graphic file (type pdf)
+<use ../analysis/scratch/post_plot.pdf>
+Package pdftex.def Info: ../analysis/scratch/post_plot.pdf  used on input line 
+226.
+(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
+<../analysis/scratch/pre_cras_consc.pdf, id=397, 289.08pt x 216.81pt>
+File: ../analysis/scratch/pre_cras_consc.pdf Graphic file (type pdf)
+<use ../analysis/scratch/pre_cras_consc.pdf>
+Package pdftex.def Info: ../analysis/scratch/pre_cras_consc.pdf  used on input 
+line 227.
+(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
+
+Underfull \hbox (badness 1242) in paragraph at lines 232--233
 []\T1/ppl/m/n/9 Our fi-nal reg-is-tered hy-poth-e-sis con-cerns the re-la-tion-
 ship be-tween pre-crastination and
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 233.
+Package xcolor Warning: Incompatible color definition on input line 235.
 
 
-Package xcolor Warning: Incompatible color definition on input line 237.
-
-
-Package xcolor Warning: Incompatible color definition on input line 241.
+Package xcolor Warning: Incompatible color definition on input line 239.
 
 
 Package xcolor Warning: Incompatible color definition on input line 243.
@@ -1324,21 +1334,26 @@ Package xcolor Warning: Incompatible color definition on input line 243.
 Package xcolor Warning: Incompatible color definition on input line 245.
 
 
+Package xcolor Warning: Incompatible color definition on input line 247.
+
+
 Package xcolor Warning: Incompatible color definition on input line 250.
-
-
-Package xcolor Warning: Incompatible color definition on input line 252.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[11] (./paper.bbl
+[11 <../analysis/scratch/post_plot.pdf> <../analysis/scratch/pre_cras_consc.pdf
+>]
+
+Package xcolor Warning: Incompatible color definition on input line 252.
+
+(./paper.bbl
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
 
-Package xcolor Warning: Incompatible color definition on input line 100.
+Package xcolor Warning: Incompatible color definition on input line 70.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
@@ -1346,7 +1361,7 @@ Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 [12]) Setting LastPage
 
-Package xcolor Warning: Incompatible color definition on input line 264.
+Package xcolor Warning: Incompatible color definition on input line 266.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1361,13 +1376,13 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: C71F8116A2BB45360221A8BA25BA52B4;5062.
  ) 
 Here is how much of TeX's memory you used:
- 22242 strings out of 478994
- 396709 string characters out of 5858184
- 687371 words of memory out of 5000000
- 39135 multiletter control sequences out of 15000+600000
+ 22256 strings out of 478994
+ 397207 string characters out of 5858184
+ 685367 words of memory out of 5000000
+ 39145 multiletter control sequences out of 15000+600000
  471233 words of font info for 144 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 102i,14n,102p,1594b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,14n,102p,1594b,494s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texli
@@ -1386,10 +1401,10 @@ rw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pf
 b></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (13 pages, 2185615 bytes).
+Output written on paper.pdf (13 pages, 2198776 bytes).
 PDF statistics:
- 494 PDF objects out of 1000 (max. 8388607)
- 418 compressed objects within 5 object streams
- 93 named destinations out of 1000 (max. 500000)
- 406 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 514 PDF objects out of 1000 (max. 8388607)
+ 434 compressed objects within 5 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 416 words of extra memory for PDF output out of 10000 (max. 10000000)
 

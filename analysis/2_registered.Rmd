@@ -17,7 +17,7 @@ set.seed(2022)
 
 ```{r, message=FALSE}
 # attach packages
-#library(rethinking)
+library(rethinking)
 library(tidyverse)
 library(patchwork)
 library(binom)
@@ -136,8 +136,106 @@ rm(n_row)
 
 ## Main Hypothesis
 
-Is there a link betweeen pre-crastionation and visual seaarch strategy?
+Is there a link betweeen pre-crastination and visual search strategy
+
+### Pilot Data
+
+First, we will rerun the model with the old pilot data. This is to double check the analysis pipeline is working properly.
+
+```{r, results = "hide", message=FALSE, results = "hide"}
+source("my_model_functions.R")
+
+d_pilot <- read_csv("../pilot_experiment/level3_summary.csv",
+                    show_col_types = FALSE) %>%
+  mutate(pre_crastinate = as_factor(
+    ifelse(pre_crastinate == 0, "no", "yes"))) %>%
+  rename(search_strat = "opt_strat")
+
+m_pilot <- fit_model(d_pilot)
+```
+
+```{r}
+# generate prior only plot
+plt <- gen_plot_pred(d_pilot, m_pilot, TRUE)
+ggsave("scratch/pilot_prior_plot.pdf", plt, width = 5, height = 4)
+
+plt2 <- gen_plot_pred(d_pilot, m_pilot)
+
+plt + plt2
+ggsave("scratch/pilot_plot.pdf", plt2, width = 5, height = 4)
+```
+
+### Full Data
+
+Now run the model on the full data
+```{r, results = "hide"}
+d <- dat %>% select(prop_hard, pre_crastinate) %>%
+  filter(pre_crastinate != "intermediate") %>%
+  rename(search_strat = "prop_hard")
 
 
+m_full <- fit_model(d)
+```
+
+```{r}
+# generate prior only plot
+
+plt <- gen_plot_pred(dat, m_full)
+plt
+ggsave("scratch/post_plot.pdf", plt + theme(legend.position = "none"), width = 4, height = 3)
+```
+
+# Now compute some summaries of the model posterior:
+
+```{r}
+samples <- rstan::extract(m_full)
+
+pred_dat <- tibble(pre_crastinate = c(-0.5, 0.5))
+
+X = as.matrix(pred_dat)
+X <- cbind(1, X)
+
+# Look at prior predictions for mmu
+mu <- array(0, dim = c(100000, nrow(X)))
+for (ii in 1:100000) {
+	# generate a random beta from priors
+	beta <- as.vector(c(
+		rnorm(1, mean=0, sd=.5), 
+		rnorm(1, mean=0, sd=.1)
+		))
+	mu[ii, ] <- plogis(X %*% beta)
+}
 
 
+mu_df <- tibble(
+	pre_crastinate = rep(c("no", "yes", "difference"), each = 100000),
+	mu  = c(mu[,1], mu[,2], mu[,2] - mu[,1]))
+
+
+HPDI(mu[,2] - mu[,1], 0.95)
+mean(abs(mu[,2] - mu[,1]) > 0.05)
+mean((mu[,2] - mu[,1]) > 0)
+```
+
+## Pre-crastination & Conscientiousness
+
+```{r}
+my_cols <-  c(viridis::viridis(3)[1], "#444444", viridis::viridis(3)[3], viridis::viridis(3)[2],  "#999999")
+
+dat_p %>% filter(!is.na(pre_crastinate), !is.na(conscientiousness)) %>%
+  ggplot(aes(pre_crastinate, conscientiousness, fill = pre_crastinate)) + 
+  geom_boxplot(alpha = 0.5) +
+  scale_fill_manual("pre-crastinate", values = my_cols) -> plt
+
+plt
+
+ggsave("scratch/pre_cras_consc.pdf", plt+theme_bw(), width = 4, height = 3)
+
+cor.test(dat_p$conscientiousness, dat_p$n_pc)
+
+# now to it with Bayes
+library(brms)
+m <- brm(n_pc ~ conscientiousness, data = dat_p,
+               priors = c(prior()))
+
+```

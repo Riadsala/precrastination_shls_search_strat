@@ -1,16 +1,18 @@
 # Fdb version 3
-["bibtex paper"] 1693559217 "paper.aux" "paper.bbl" "paper" 1693559218
+["bibtex paper"] 1693566933 "paper.aux" "paper.bbl" "paper" 1693566934
   "./rs.bst" 1570526553 20654 9775db7ab4ae324750659b5ec0af2adc ""
   "literature.bib" 1579686990 16803 7d2c628aa533fd0f22807e301f9b71bc ""
-  "paper.aux" 1693559218 12626 5740ba5f302af1c38aa1c64394f7631b "pdflatex"
+  "paper.aux" 1693566934 12853 6e8e8105cbaee69db64ed8d48c637e4b "pdflatex"
   (generated)
   "paper.blg"
   "paper.bbl"
-["pdflatex"] 1693559217 "paper.tex" "paper.pdf" "paper" 1693559218
-  "../analysis/scratch/acc_main.pdf" 1693558915 5761 272444d4791aef0893f7aa1b668d50a7 ""
-  "../analysis/scratch/pre_crastinate.pdf" 1693559207 4585 35d9033f5d4b67c3c32b94905c1b8455 ""
-  "../analysis/scratch/rt_main.pdf" 1693558916 6422 a422a7eace9bfc8e5ffb9a4ad90230a9 ""
-  "../analysis/scratch/strat_hist.pdf" 1693559134 4688 808e76db3f2e6e9251c386674326f792 ""
+["pdflatex"] 1693566933 "paper.tex" "paper.pdf" "paper" 1693566934
+  "../analysis/scratch/acc_main.pdf" 1693565276 5761 b2623408f519a5bb28c645b16cd17799 ""
+  "../analysis/scratch/post_plot.pdf" 1693565335 9888 74964337c50001fc6ad30e84885be03a ""
+  "../analysis/scratch/pre_cras_consc.pdf" 1693565336 5224 2d1f2dd69347237046032ea051492b3e ""
+  "../analysis/scratch/pre_crastinate.pdf" 1693565277 4552 e2b165f3ac365fa950546922f1d8468c ""
+  "../analysis/scratch/rt_main.pdf" 1693565277 6422 01dd5cb180f1831d2fa786e3e669a856 ""
+  "../analysis/scratch/strat_hist.pdf" 1693565277 4688 ea9d22c814aab7f947625265da52096e ""
   "../pilot_experiment/scratch/acc.pdf" 1659356863 5332 0a6f2d9a9aa345a3c2185d023c262389 ""
   "../pilot_experiment/scratch/rt.pdf" 1659356863 5796 a622afa7029c40dd93b854677429b351 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -245,13 +247,13 @@
   "OpenAccesslogo_bw.pdf" 1570526553 13234 9c37d6436deac165264324b958c1144b ""
   "RSOS_Pubs_Logo_Line_CMYK.pdf" 1570526553 15433 0e35d9b4538f91ac7d0320915fe3e0ef ""
   "RS_crossmark_logo.pdf" 1570526553 35286 83e555b3eba2241e1937afc601418935 ""
-  "paper.aux" 1693559218 12626 5740ba5f302af1c38aa1c64394f7631b "pdflatex"
-  "paper.bbl" 1693559217 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
-  "paper.out" 1693559218 5062 c71f8116a2bb45360221a8ba25ba52b4 "pdflatex"
-  "paper.tex" 1693559215 39459 02103f0142b6cb2c42a2bc11bcf769b4 ""
+  "paper.aux" 1693566934 12853 6e8e8105cbaee69db64ed8d48c637e4b "pdflatex"
+  "paper.bbl" 1693566933 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
+  "paper.out" 1693566934 5062 c71f8116a2bb45360221a8ba25ba52b4 "pdflatex"
+  "paper.tex" 1693566931 39200 b37cfa70cf8d4399d32bf96fd6d5f72f ""
   "rsos.cls" 1570526553 50432 d1c32964697032cc41b6405fa0c48058 ""
   (generated)
-  "paper.out"
-  "paper.pdf"
   "paper.aux"
   "paper.log"
+  "paper.pdf"
+  "paper.out"
