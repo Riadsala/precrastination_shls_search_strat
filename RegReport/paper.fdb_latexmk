@@ -1,13 +1,14 @@
 # Fdb version 3
-["bibtex paper"] 1693566933 "paper.aux" "paper.bbl" "paper" 1693566934
+["bibtex paper"] 1693573044 "paper.aux" "paper.bbl" "paper" 1693573046
   "./rs.bst" 1570526553 20654 9775db7ab4ae324750659b5ec0af2adc ""
   "literature.bib" 1579686990 16803 7d2c628aa533fd0f22807e301f9b71bc ""
-  "paper.aux" 1693566934 12853 6e8e8105cbaee69db64ed8d48c637e4b "pdflatex"
+  "paper.aux" 1693573045 13823 34d6e4a0b1fca33eaf7bdfb5722b6031 "pdflatex"
   (generated)
   "paper.blg"
   "paper.bbl"
-["pdflatex"] 1693566933 "paper.tex" "paper.pdf" "paper" 1693566934
+["pdflatex"] 1693573044 "paper.tex" "paper.pdf" "paper" 1693573046
   "../analysis/scratch/acc_main.pdf" 1693565276 5761 b2623408f519a5bb28c645b16cd17799 ""
+  "../analysis/scratch/exp_strat.pdf" 1693572143 5664 8157ca2f56b83841026d5657e368fa3c ""
   "../analysis/scratch/post_plot.pdf" 1693565335 9888 74964337c50001fc6ad30e84885be03a ""
   "../analysis/scratch/pre_cras_consc.pdf" 1693565336 5224 2d1f2dd69347237046032ea051492b3e ""
   "../analysis/scratch/pre_crastinate.pdf" 1693565277 4552 e2b165f3ac365fa950546922f1d8468c ""
@@ -24,6 +25,8 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm" 1136768653 1348 c311631dfec4123b7faa7f864709e626 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm" 1136768653 4712 9ef4d7d106579d4b136e1529e1a4533c ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm" 1136768653 7040 b2bd27e2bfe6f6948cbc3239cae7444f ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvro8r.tfm" 1136768653 4964 f223217e5e1f85fa3742fb0480aba9e8 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvro8t.tfm" 1136768653 7292 d408122871055bbc541d7280c154e210 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm" 1136768653 2532 9ad73cf4dd2173a847f2a5f5608e0b9a ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplb8t.tfm" 1136768653 3456 16dd534f88eb2bd21ebc7203786b436e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm" 1136768653 2796 d37c29814a6717720ee1a7c9a0b2c3b8 ""
@@ -76,6 +79,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1136849748 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1136849748 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb" 1136849748 48169 b4fd9d908b9ee8c65d4305ad39071c5e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb" 1136849748 52406 dad2f72863a03727d5f536c64a69c452 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb" 1136849748 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb" 1136849748 50022 90249cba7e3e4e9845f80328d6f9bd13 ""
@@ -83,6 +87,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf" 1136768653 2340 0efed6a948c3c37d870e4e7ddb85c7c3 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf" 1136768653 3556 570286160ebfdd10d887aaa718e2e64d ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf" 1136768653 2344 44ff28c9ef2fc97180cd884f900fee71 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvro8t.vf" 1136768653 2348 717f0e01beff9c30c0df4945e471886f ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplb8t.vf" 1136768653 2316 c3899bd8afb459a9a5a9a546bf3029a2 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf" 1136768653 2324 a163806de13ddf37313d2ee968aa0a98 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplri8t.vf" 1136768653 2308 5bc0a90b83a3fd7d37d34ef3b64d7e8a ""
@@ -247,13 +252,13 @@
   "OpenAccesslogo_bw.pdf" 1570526553 13234 9c37d6436deac165264324b958c1144b ""
   "RSOS_Pubs_Logo_Line_CMYK.pdf" 1570526553 15433 0e35d9b4538f91ac7d0320915fe3e0ef ""
   "RS_crossmark_logo.pdf" 1570526553 35286 83e555b3eba2241e1937afc601418935 ""
-  "paper.aux" 1693566934 12853 6e8e8105cbaee69db64ed8d48c637e4b "pdflatex"
-  "paper.bbl" 1693566933 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
-  "paper.out" 1693566934 5062 c71f8116a2bb45360221a8ba25ba52b4 "pdflatex"
-  "paper.tex" 1693566931 39200 b37cfa70cf8d4399d32bf96fd6d5f72f ""
+  "paper.aux" 1693573045 13823 34d6e4a0b1fca33eaf7bdfb5722b6031 "pdflatex"
+  "paper.bbl" 1693573044 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
+  "paper.out" 1693573045 5062 c71f8116a2bb45360221a8ba25ba52b4 "pdflatex"
+  "paper.tex" 1693573042 40011 7a65ccc06efb3912feed1f145bf74451 ""
   "rsos.cls" 1570526553 50432 d1c32964697032cc41b6405fa0c48058 ""
   (generated)
   "paper.aux"
-  "paper.log"
   "paper.pdf"
   "paper.out"
+  "paper.log"
