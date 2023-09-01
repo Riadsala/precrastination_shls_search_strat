@@ -131,3 +131,13 @@ dat_p %>%
 
 rm(n_row)
 ```
+
+# Registered Analysis
+
+## Main Hypothesis
+
+Is there a link betweeen pre-crastionation and visual seaarch strategy?
+
+
+
+
