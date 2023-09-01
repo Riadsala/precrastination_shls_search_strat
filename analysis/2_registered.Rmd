@@ -1,0 +1,81 @@
+---
+title: "Visual Search and Pre-crastination"
+author: "Alasdair D.F. Clarke"
+date: '2022-05-30'
+output:
+  tufte::tufte_html:
+    number_sections: true
+    fig_height: 3
+    link-citations: yes  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(digits = 3)
+set.seed(2022)
+```
+
+```{r, message=FALSE}
+# attach packages
+#library(rethinking)
+library(tidyverse)
+library(patchwork)
+library(binom)
+```
+
+```{r}
+# set ggplot2 options
+theme_set(ggthemes::theme_tufte() + 
+            theme(plot.background = element_rect(fill = "#fffff8", 
+                                                 colour = "#fffff8")))
+
+our_cols <- c("#1b9e77", "#7570b3")
+options(ggplot2.discrete.fill = our_cols ,
+        ggplot2.discrete.colour = our_cols)
+```
+
+
+# Import data
+
+```{r}
+dat_s <- read_csv("scratch/dat_rt_acc_strat.csv")
+dat_p <- read_csv("scratch/prcrastination_and_personality.csv") %>%
+  mutate(pre_crastinate = as_factor(pre_crastinate),
+         pre_crastinate = fct_relevel(pre_crastinate, "yes", "intermediate", "no"))
+
+```
+
+# Overview of measures
+
+## Visual Search Accuracy and Response Time
+
+```{r}
+# merge search with personality and precrastination data
+dat <- left_join(dat_s, dat_p) %>%
+  filter(!is.na(pre_crastinate))
+
+dat %>% ggplot(aes(targ_side_rel, accuracy, fill = pre_crastinate)) +
+  geom_boxplot(alpha = 0.5) +
+    scale_x_discrete("trial type")  +
+  theme(legend.position = "none")  -> plt_acc
+
+dat %>% ggplot(aes(targ_side_rel, median_rt, fill = pre_crastinate)) +
+  geom_boxplot(alpha = 0.5) +
+  theme(legend.justification=c(1,0), legend.position=c(1,0)) + 
+  scale_x_discrete("trial type")  +
+  scale_y_log10("reaction time (seconds)")  -> plt_rt
+
+plt_acc + plt_rt
+
+ggsave("scratch/acc_main.pdf", plt_acc + theme_bw() + theme(legend.position = "none"), width = 4, height = 3)
+ggsave("scratch/rt_main.pdf", plt_rt  + theme_bw() + theme(legend.justification=c(1,0), legend.position=c(1,0)), width = 4, height = 3)
+
+```
+
+
+
+```{r}
+
+rm(plt_acc, plt_rt)
+```
+

@@ -43,8 +43,13 @@ dat_trl <- read_csv("../data/shls_rt_acc.csv", col_types = "cddcdd")
 
 # read in fixation data (only first 20 fixations... see ascii files for full raw data)
 dat_fix <- read_csv("../data/processed_fix_data.csv", col_types = "ddddddf")
+```
 
+Let's count participants:
 
+```{r}
+length(unique(dat_trl$person))
+length(unique(dat_fix$person))
 ```
 
 ## Reaction Time and Accuracy
@@ -143,12 +148,13 @@ write_csv(dat_shls, "scratch/dat_rt_acc_strat.csv")
 ## Do people pre-crastinate?
 
 ```{r}
-dat <- read_csv("../data/pre_crastinate.csv", col_types = "iif") 
+dat <- read_csv("../data/pre_crastinate.csv", 
+                col_types = "iif") 
 
 summary(dat)
 ```
 
-We have data from `r length(dat)/6` people and no missing data. 
+We have data from `r nrow(dat)/6` people and no missing data. 
 
 First, report number of people who *double pre-crastinate*:
 
@@ -197,8 +203,13 @@ dat %>%
 
 Read in personality data and compute overall scores.
 
-```{r}
+```{r, warning=FALSE, message=FALSE}
 dat_p <- read_csv("../data/personality_q.csv") 
+```
+
+We have data from `r length(unique(dat_p$person))` people. 
+
+```{r}
 
 # creating list of questions
 procras_qs <- names(dat_p)[str_detect(names(dat_p), "ProScale")]

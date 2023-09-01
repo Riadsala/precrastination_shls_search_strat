@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  29 AUG 2023 15:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  1 SEP 2023 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1123,61 +1123,104 @@ Package xcolor Warning: Incompatible color definition on input line 69.
 
 Package xcolor Warning: Incompatible color definition on input line 73.
 
-<../pilot_experiment/scratch/acc.pdf, id=232, 289.08pt x 216.81pt>
-File: ../pilot_experiment/scratch/acc.pdf Graphic file (type pdf)
-<use ../pilot_experiment/scratch/acc.pdf>
-Package pdftex.def Info: ../pilot_experiment/scratch/acc.pdf  used on input lin
-e 78.
-(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../pilot_experiment/scratch/rt.pdf, id=233, 289.08pt x 216.81pt>
-File: ../pilot_experiment/scratch/rt.pdf Graphic file (type pdf)
-<use ../pilot_experiment/scratch/rt.pdf>
-Package pdftex.def Info: ../pilot_experiment/scratch/rt.pdf  used on input line
- 79.
-(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
+
+LaTeX Warning: File `../pilot_experiment/scratch/acc.pdf' not found on input li
+ne 78.
+
+
+! Package pdftex.def Error: File `../pilot_experiment/scratch/acc.pdf' not foun
+d: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.78 ...6cm]{../pilot_experiment/scratch/acc.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 78
+.
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+
+LaTeX Warning: File `../pilot_experiment/scratch/rt.pdf' not found on input lin
+e 79.
+
+
+! Package pdftex.def Error: File `../pilot_experiment/scratch/rt.pdf' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.79 ...=6cm]{../pilot_experiment/scratch/rt.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Package xcolor Warning: Incompatible color definition on input line 84.
 
-<../analysis/scratch/pilot_prior_plot.pdf, id=238, 361.35pt x 289.08pt>
-File: ../analysis/scratch/pilot_prior_plot.pdf Graphic file (type pdf)
-<use ../analysis/scratch/pilot_prior_plot.pdf>
-Package pdftex.def Info: ../analysis/scratch/pilot_prior_plot.pdf  used on inpu
-t line 91.
-(pdftex.def)             Requested size: 170.71652pt x 136.57336pt.
-<../analysis/scratch/pilot_plot.pdf, id=239, 361.35pt x 289.08pt>
-File: ../analysis/scratch/pilot_plot.pdf Graphic file (type pdf)
-<use ../analysis/scratch/pilot_plot.pdf>
-Package pdftex.def Info: ../analysis/scratch/pilot_plot.pdf  used on input line
- 92.
-(pdftex.def)             Requested size: 170.71652pt x 136.57336pt.
 
-Package xcolor Warning: Incompatible color definition on input line 95.
+Package xcolor Warning: Incompatible color definition on input line 86.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[4 <../pilot_experiment/scratch/acc.pdf> <../pilot_experiment/scratch/rt.pdf>]
+[4]
+
+LaTeX Warning: File `../analysis/scratch/pilot_prior_plot.pdf' not found on inp
+ut line 91.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/pilot_prior_plot.pdf' not
+ found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...../analysis/scratch/pilot_prior_plot.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../analysis/scratch/pilot_plot.pdf' not found on input lin
+e 92.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/pilot_plot.pdf' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 ...=6cm]{../analysis/scratch/pilot_plot.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Package xcolor Warning: Incompatible color definition on input line 97.
 
 
-Package xcolor Warning: Incompatible color definition on input line 109.
-
-
-Package xcolor Warning: Incompatible color definition on input line 112.
+Package xcolor Warning: Incompatible color definition on input line 106.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[5 <../analysis/scratch/pilot_prior_plot.pdf> <../analysis/scratch/pilot_plot.p
-df>]
-LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
-3.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
-File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
+[5]
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
 
 Package xcolor Warning: Incompatible color definition on input line 115.
 
@@ -1186,7 +1229,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 Package xcolor Warning: Incompatible color definition on input line 117.
 
-<Figures/IMG_7939.jpg, id=301, 2457.18pt x 3276.24pt>
+<Figures/IMG_7939.jpg, id=263, 2457.18pt x 3276.24pt>
 File: Figures/IMG_7939.jpg Graphic file (type jpg)
 <use Figures/IMG_7939.jpg>
 Package pdftex.def Info: Figures/IMG_7939.jpg  used on input line 123.
@@ -1200,7 +1243,7 @@ Underfull \hbox (badness 10000) detected at line 124
 Package xcolor Warning: Incompatible color definition on input line 128.
 
 
-Package xcolor Warning: Incompatible color definition on input line 132.
+Package xcolor Warning: Incompatible color definition on input line 131.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1216,7 +1259,7 @@ Package xcolor Warning: Incompatible color definition on input line 138.
 
 Package xcolor Warning: Incompatible color definition on input line 140.
 
-<Figures/using_smaller_sample_sizes.pdf, id=319, 289.08pt x 289.08pt>
+<Figures/using_smaller_sample_sizes.pdf, id=281, 289.08pt x 289.08pt>
 File: Figures/using_smaller_sample_sizes.pdf Graphic file (type pdf)
 <use Figures/using_smaller_sample_sizes.pdf>
 Package pdftex.def Info: Figures/using_smaller_sample_sizes.pdf  used on input 
@@ -1229,7 +1272,7 @@ Package xcolor Warning: Incompatible color definition on input line 153.
 Package xcolor Warning: Incompatible color definition on input line 155.
 
 
-Package xcolor Warning: Incompatible color definition on input line 158.
+Package xcolor Warning: Incompatible color definition on input line 155.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
@@ -1246,7 +1289,7 @@ Package xcolor Warning: Incompatible color definition on input line 161.
 Package xcolor Warning: Incompatible color definition on input line 169.
 
 
-Package xcolor Warning: Incompatible color definition on input line 174.
+Package xcolor Warning: Incompatible color definition on input line 173.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1276,13 +1319,13 @@ Package xcolor Warning: Incompatible color definition on input line 189.
 
 Package xcolor Warning: Incompatible color definition on input line 193.
 
-<../analysis/scratch/acc_main.pdf, id=371, 289.08pt x 216.81pt>
+<../analysis/scratch/acc_main.pdf, id=333, 289.08pt x 216.81pt>
 File: ../analysis/scratch/acc_main.pdf Graphic file (type pdf)
 <use ../analysis/scratch/acc_main.pdf>
 Package pdftex.def Info: ../analysis/scratch/acc_main.pdf  used on input line 2
 00.
 (pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../analysis/scratch/rt_main.pdf, id=372, 289.08pt x 216.81pt>
+<../analysis/scratch/rt_main.pdf, id=334, 289.08pt x 216.81pt>
 File: ../analysis/scratch/rt_main.pdf Graphic file (type pdf)
 <use ../analysis/scratch/rt_main.pdf>
 Package pdftex.def Info: ../analysis/scratch/rt_main.pdf  used on input line 20
@@ -1291,44 +1334,45 @@ Package pdftex.def Info: ../analysis/scratch/rt_main.pdf  used on input line 20
 
 Package xcolor Warning: Incompatible color definition on input line 206.
 
-<../analysis/scratch/strat_hist.pdf, id=375, 289.08pt x 216.81pt>
-File: ../analysis/scratch/strat_hist.pdf Graphic file (type pdf)
-<use ../analysis/scratch/strat_hist.pdf>
-Package pdftex.def Info: ../analysis/scratch/strat_hist.pdf  used on input line
- 213.
-(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../analysis/scratch/pre_crastinate.pdf, id=376, 289.08pt x 216.81pt>
-File: ../analysis/scratch/pre_crastinate.pdf Graphic file (type pdf)
-<use ../analysis/scratch/pre_crastinate.pdf>
-Package pdftex.def Info: ../analysis/scratch/pre_crastinate.pdf  used on input 
-line 214.
-(pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
+
+LaTeX Warning: File `../analysis/scratch/strat_hist.pdf' not found on input lin
+e 213.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/strat_hist.pdf' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.213 ...6cm]{../analysis/scratch/strat_hist.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../analysis/scratch/pre_crastinate.pdf' not found on input
+ line 214.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/pre_crastinate.pdf' not f
+ound: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.214 ...{../analysis/scratch/pre_crastinate.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Package xcolor Warning: Incompatible color definition on input line 219.
 
-<../analysis/scratch/prior_plot.pdf, id=378, 361.35pt x 289.08pt>
-File: ../analysis/scratch/prior_plot.pdf Graphic file (type pdf)
-<use ../analysis/scratch/prior_plot.pdf>
-Package pdftex.def Info: ../analysis/scratch/prior_plot.pdf  used on input line
- 225.
-(pdftex.def)             Requested size: 170.71652pt x 136.57336pt.
-<../analysis/scratch/post_plot.pdf, id=379, 361.35pt x 289.08pt>
-File: ../analysis/scratch/post_plot.pdf Graphic file (type pdf)
-<use ../analysis/scratch/post_plot.pdf>
-Package pdftex.def Info: ../analysis/scratch/post_plot.pdf  used on input line 
-226.
-(pdftex.def)             Requested size: 170.71652pt x 136.57336pt.
 
-Underfull \hbox (badness 1242) in paragraph at lines 231--232
-[]\T1/ppl/m/n/9 Our fi-nal reg-is-tered hy-poth-e-sis con-cerns the re-la-tion-
-ship be-tween pre-crastination and
- []
-
-
-Package xcolor Warning: Incompatible color definition on input line 234.
-
-
-Package xcolor Warning: Incompatible color definition on input line 234.
+Package xcolor Warning: Incompatible color definition on input line 222.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1336,64 +1380,113 @@ Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 [10 <../analysis/scratch/acc_main.pdf> <../analysis/scratch/rt_main.pdf>]
 
+LaTeX Warning: File `../analysis/scratch/prior_plot.pdf' not found on input lin
+e 225.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/prior_plot.pdf' not found
+: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.225 ...6cm]{../analysis/scratch/prior_plot.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `../analysis/scratch/post_plot.pdf' not found on input line
+ 226.
+
+
+! Package pdftex.def Error: File `../analysis/scratch/post_plot.pdf' not found:
+ using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226 ...=6cm]{../analysis/scratch/post_plot.pdf}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 1242) in paragraph at lines 231--232
+[]\T1/ppl/m/n/9 Our fi-nal reg-is-tered hy-poth-e-sis con-cerns the re-la-tion-
+ship be-tween pre-crastination and
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 232.
+
+
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+
+
+[11]
+
+Package xcolor Warning: Incompatible color definition on input line 234.
+
+
 Package xcolor Warning: Incompatible color definition on input line 238.
 
 
 Package xcolor Warning: Incompatible color definition on input line 242.
 
 
-Package xcolor Warning: Incompatible color definition on input line 250.
+Package xcolor Warning: Incompatible color definition on input line 244.
 
 
-Package xcolor Warning: Incompatible color definition on input line 253.
+Package xcolor Warning: Incompatible color definition on input line 246.
 
 
-Package xcolor Warning: Incompatible color definition on input line 258.
+Package xcolor Warning: Incompatible color definition on input line 251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 258.
+Package xcolor Warning: Incompatible color definition on input line 259.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[11 <../analysis/scratch/strat_hist.pdf> <../analysis/scratch/pre_crastinate.pd
-f> <../analysis/scratch/prior_plot.pdf> <../analysis/scratch/post_plot.pdf>]
-(./paper.bbl
+[12] (./paper.bbl
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
 
-Package xcolor Warning: Incompatible color definition on input line 81.
-
-
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
-
-
-[12]) Setting LastPage
-
-Package xcolor Warning: Incompatible color definition on input line 272.
+Package xcolor Warning: Incompatible color definition on input line 133.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[13] (./paper.aux)
+[13]) Setting LastPage
+
+Package xcolor Warning: Incompatible color definition on input line 265.
+
+
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+
+
+[14] (./paper.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: D6C15FE8A188CE271CBA6B12C7AA4410;5105.
+(rerunfilecheck)             Checksum: C71F8116A2BB45360221A8BA25BA52B4;5062.
  ) 
 Here is how much of TeX's memory you used:
- 22273 strings out of 478994
- 397736 string characters out of 5858184
- 686371 words of memory out of 5000000
- 39157 multiletter control sequences out of 15000+600000
- 473095 words of font info for 146 fonts, out of 8000000 for 9000
+ 22371 strings out of 478994
+ 400815 string characters out of 5858184
+ 688370 words of memory out of 5000000
+ 39236 multiletter control sequences out of 15000+600000
+ 472164 words of font info for 145 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 102i,14n,102p,1594b,504s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,14n,102p,1594b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texli
@@ -1412,10 +1505,10 @@ rw/helvetic/uhvb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helv
 etic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/up
 lb8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pf
 b></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (13 pages, 2225930 bytes).
+Output written on paper.pdf (14 pages, 2172359 bytes).
 PDF statistics:
- 537 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
+ 471 PDF objects out of 1000 (max. 8388607)
+ 402 compressed objects within 5 object streams
  98 named destinations out of 1000 (max. 500000)
- 426 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
 

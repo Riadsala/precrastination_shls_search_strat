@@ -116,6 +116,11 @@ dat_trl &lt;- read_csv(&quot;../data/shls_rt_acc.csv&quot;, col_types = &quot;cd
 
 # read in fixation data (only first 20 fixations... see ascii files for full raw data)
 dat_fix &lt;- read_csv(&quot;../data/processed_fix_data.csv&quot;, col_types = &quot;ddddddf&quot;)</code></pre>
+<p>Let’s count participants:</p>
+<pre class="r"><code>length(unique(dat_trl$person))</code></pre>
+<pre><code>## [1] 291</code></pre>
+<pre class="r"><code>length(unique(dat_fix$person))</code></pre>
+<pre><code>## [1] 291</code></pre>
 <div id="reaction-time-and-accuracy" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Reaction Time and Accuracy</h2>
 <pre class="r"><code>dat_trl %&gt;%
@@ -198,7 +203,8 @@ write_csv(dat_shls, &quot;scratch/dat_rt_acc_strat.csv&quot;)</code></pre>
 <h1><span class="header-section-number">2</span> Pre-crastination</h1>
 <div id="do-people-pre-crastinate" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Do people pre-crastinate?</h2>
-<pre class="r"><code>dat &lt;- read_csv(&quot;../data/pre_crastinate.csv&quot;, col_types = &quot;iif&quot;) 
+<pre class="r"><code>dat &lt;- read_csv(&quot;../data/pre_crastinate.csv&quot;, 
+                col_types = &quot;iif&quot;) 
 
 summary(dat)</code></pre>
 <pre><code>##      person        trial                choice        site          
@@ -208,7 +214,7 @@ summary(dat)</code></pre>
 ##  Mean   :493   Mean   :3.5                                          
 ##  3rd Qu.:741   3rd Qu.:5.0                                          
 ##  Max.   :902   Max.   :6.0</code></pre>
-<p>We have data from 0.667 people and no missing data.</p>
+<p>We have data from 305 people and no missing data.</p>
 <p>First, report number of people who <em>double pre-crastinate</em>:</p>
 <pre class="r"><code>dat %&gt;% filter(choice == &quot;double_pre_cra&quot;) %&gt;% 
   group_by(person, site) %&gt;%
@@ -314,6 +320,7 @@ knitr::kable(dpc)</code></pre>
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<p>We have data from 304 people.</p>
 <pre class="r"><code># creating list of questions
 procras_qs &lt;- names(dat_p)[str_detect(names(dat_p), &quot;ProScale&quot;)]
 bfi_qs &lt;-     names(dat_p)[str_detect(names(dat_p), &quot;BFI&quot;)]
