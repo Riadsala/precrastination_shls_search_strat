@@ -39,15 +39,17 @@ options(ggplot2.discrete.fill = our_cols ,
 
 ```{r}
 dat_s <- read_csv("scratch/dat_rt_acc_strat.csv")
+
 dat_p <- read_csv("scratch/prcrastination_and_personality.csv") %>%
+  filter(!is.na(pre_crastinate)) %>%
   mutate(pre_crastinate = as_factor(pre_crastinate),
-         pre_crastinate = fct_relevel(pre_crastinate, "yes", "intermediate", "no"))
+         pre_crastinate = fct_relevel(pre_crastinate, "no", "intermediate", "yes"))
 
 ```
 
 # Overview of measures
 
-## Visual Search Accuracy and Response Time
+## Visual Search Accuracy & Response Time
 
 ```{r}
 # merge search with personality and precrastination data
@@ -57,11 +59,11 @@ dat <- left_join(dat_s, dat_p) %>%
 dat %>% ggplot(aes(targ_side_rel, accuracy, fill = pre_crastinate)) +
   geom_boxplot(alpha = 0.5) +
     scale_x_discrete("trial type")  +
-  theme(legend.position = "none")  -> plt_acc
+  theme(legend.justification=c(0,0), legend.position=c(0,0))  -> plt_acc
 
 dat %>% ggplot(aes(targ_side_rel, median_rt, fill = pre_crastinate)) +
   geom_boxplot(alpha = 0.5) +
-  theme(legend.justification=c(1,0), legend.position=c(1,0)) + 
+  theme(legend.position = "none") + 
   scale_x_discrete("trial type")  +
   scale_y_log10("reaction time (seconds)")  -> plt_rt
 
@@ -75,7 +77,57 @@ ggsave("scratch/rt_main.pdf", plt_rt  + theme_bw() + theme(legend.justification=
 
 
 ```{r}
-
 rm(plt_acc, plt_rt)
 ```
 
+## Search Strategy & Pre-crastination 
+
+```{r}
+dat_s %>% 
+  group_by(person) %>%
+  summarise(search_strat = unique(prop_hard)) -> dat_strat 
+
+dat_strat %>%
+  ggplot(aes(search_strat)) + 
+  geom_histogram(breaks = seq(0.0, 1, 0.1), colour = "black") + 
+  scale_x_continuous("search strategy score") -> plt
+
+ggsave("scratch/strat_hist.pdf", plt + theme_bw() + theme(legend.position = "none"), width = 4, height = 3)
+
+```
+
+And now look at pre-crastination measure. 
+
+```{r}
+
+dat_p %>% ggplot(aes(x = n_pc)) +
+  geom_histogram(bins = 7, alpha = 0.67, colour = "black") +
+  scale_x_continuous("number of trials") + 
+  scale_fill_viridis_d() +
+  theme(legend.position = "none") -> plt1
+
+dat_p %>% ggplot(aes(x = pre_crastinate)) + 
+  geom_bar() +
+  scale_x_discrete("pre-crastination classification") + 
+  scale_fill_viridis_d() +
+  theme(legend.position = "none") -> plt2
+
+plt1 + plt2
+
+ggsave("scratch/pre_crastinate.pdf", plt2 + theme_bw(),  width = 4, height = 3)
+
+```
+
+We have replicated the original pre-crastination finding.... 
+
+```{r}
+n_row <- nrow(dat_p)
+
+dat_p %>% 
+  group_by(pre_crastinate) %>%
+  summarise(n = n(),
+            percentage = 100*n/n_row) %>%
+  knitr::kable()
+
+rm(n_row)
+```
