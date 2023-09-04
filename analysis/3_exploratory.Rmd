@@ -31,7 +31,6 @@ theme_set(ggthemes::theme_tufte() +
 
 ```
 
-
 # Import data
 
 ```{r}
@@ -48,7 +47,6 @@ dat <- full_join(dat_s %>% filter(targ_side_rel == "absent"),
           by = c("person", "site"))
 ```
 
-
 # Calculate Correlations
 
 ```{r}
@@ -58,7 +56,9 @@ measures <- factor(1:10, labels = c("BIStotal", "attentional_imp", "motor_imp", 
 
 measures <- fct_rev(measures)
 
-dps <- dat %>% filter(pre_crastinate != "intermediate")
+dps <- dat %>% filter(pre_crastinate != "intermediate") %>%
+  mutate(pre_crastinate = fct_drop(pre_crastinate),
+         pre_crastinate = fct_relevel(pre_crastinate, "yes"))
 
 get_rd_int <- function(measure) {
   
