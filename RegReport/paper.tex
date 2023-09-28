@@ -88,8 +88,8 @@ After conditioning the model on the data, we obtain posterior probability distri
 
 \begin{figure}[t]
   \centering  
-  %\subfigure[]{\includegraphics[width=6cm]{../analysis/scratch/pilot_prior_plot.pdf}}
-  %\subfigure[]{\includegraphics[width=6cm]{../analysis/scratch/pilot_plot.pdf}}
+  \subfigure[]{\includegraphics[width=6cm]{../analysis/scratch/pilot_prior_plot.pdf}}
+  \subfigure[]{\includegraphics[width=6cm]{../analysis/scratch/pilot_plot.pdf}}
   \caption{(a) Prior and (b) posterior distributions for the mean of the two groups of participants, and the difference between them. Our priors for the two groups are identical, hence the overlapping distributions.}
   \label{fig:exp1_strategy}
 \end{figure}
@@ -101,7 +101,7 @@ Based on the results of our pilot analysis, it appears that there is a relations
 As such, we will investigate the following hypotheses:
 
 \begin{enumerate}
-\item There is a difference (in either direction) in search behaviour between those participants who pre-crastinated and those who did not. This will be determined by looking at \textcolor{red}{$p(\lvert \delta \rvert >0.05 | X)$. A value >0.95 will be taken as evidence of a difference.} 
+\item There is a difference (in either direction) in search behaviour between those participants who pre-crastinated and those who did not. This will be determined by looking at $p(\delta>0 | X)$. A value <0.05 will be taken as evidence that pre-crastination leads to less optimal search strategies, while a value >0.95 will be taken as evidence for the opposite.
 \item The magnitude of the difference is in-line with the value of 0.125 ($95\%$ HPDI of $[-0.003, 0.242]$) obtained in our pilot experiment. This will be determined by comparing the new HPDI with the pilot HPDI. A new estimate for the size of the difference will then be computed by pooling all data in a mixed-effect model (with random effects for data collected in Aberdeen, Essex, and Pilot).
 \item There is a positive correlation ($r=0.22$) between pre-crastination and conscientiousness.
 \end{enumerate}
