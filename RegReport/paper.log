@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  28 SEP 2023 11:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  2 OCT 2023 10:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -858,33 +858,83 @@ an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to
 loading the todonotes package. on input line 9.
 
 
-Underfull \hbox (badness 7433) in paragraph at lines 33--35
-\T1/ppl/m/n/9 this sub-optimal search be-haviour rep-re-sents a 
+Underfull \hbox (badness 6001) in paragraph at lines 33--35
+\T1/ppl/m/n/9 many par-tic-i-pants con-sis-tently move their eyes 
  []
 
 
-Underfull \hbox (badness 1629) in paragraph at lines 33--35
-\T1/ppl/m/n/9 two heavy buck-ets (one close and one far), and 
+Underfull \hbox (badness 7540) in paragraph at lines 33--35
+\T1/ppl/m/n/9 to lo-ca-tions that can be eas-ily as-cer-tained to 
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 33--35
-\T1/ppl/m/n/9 as con-sis-tently pick-ing up the closer bucket first, 
+Underfull \hbox (badness 4120) in paragraph at lines 33--35
+\T1/ppl/m/n/9 nei-ther con-tain the tar-get, nor to pro-vide new 
  []
 
 
-Underfull \hbox (badness 1320) in paragraph at lines 33--35
-\T1/ppl/m/n/9 of fix-a-tions di-rected to more clut-tered re-gions of 
+Underfull \hbox (badness 2221) in paragraph at lines 33--35
+\T1/ppl/m/n/9 in-for-ma-tion about the tar-get's lo-ca-tion. Here we 
  []
 
 
-Underfull \hbox (badness 2050) in paragraph at lines 33--35
-\T1/ppl/m/n/9 the search ar-ray. We []pre-dicted[] an as-so-ci-a-tion of 
+Underfull \hbox (badness 1769) in paragraph at lines 33--35
+[]\T1/ppl/m/n/9 asked[] whether this sub-optimal search be-haviour 
  []
 
 
-Underfull \hbox (badness 4072) in paragraph at lines 33--35
-\T1/ppl/m/n/9 pre-crastination with in-ef-fi-cient search strate-gies. 
+Underfull \hbox (badness 2205) in paragraph at lines 33--35
+\T1/ppl/m/n/9 longer do-ing the task than is nec-es-sary. To test 
+ []
+
+
+Underfull \hbox (badness 1546) in paragraph at lines 33--35
+\T1/ppl/m/n/9 this hy-poth-e-sis, we []asked[] 200 par-tic-i-pants to do 
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 33--35
+\T1/ppl/m/n/9 two tasks: re-trieve two heavy buck-ets (one close 
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 33--35
+\T1/ppl/m/n/9 crastination is de-fined as con-sis-tently pick-ing up 
+ []
+
+
+Underfull \hbox (badness 2293) in paragraph at lines 33--35
+\T1/ppl/m/n/9 the closer bucket first, ver-sus the more ef-fi-cient 
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 33--35
+\T1/ppl/m/n/9 ef-fi-ciency is the pro-por-tion of fix-a-tions di-rected 
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 33--35
+\T1/ppl/m/n/9 to more clut-tered re-gions of the search ar-ray. 
+ []
+
+
+Underfull \hbox (badness 1365) in paragraph at lines 33--35
+[]\T1/ppl/m/n/9 Based on pi-lot data, we pre-dicted[] an as-so-ci-a-tion 
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 33--35
+\T1/ppl/m/n/9 Per-son-al-ity in-ven-to-ries []were[] also ad-min-is-tered to 
+ []
+
+
+Overfull \hbox (10.06122pt too wide) in paragraph at lines 33--35
+\T1/ppl/m/n/9 as-so-ci-a-tion be-tween search strat-egy and pre-crastination, 
+ []
+
+
+Underfull \hbox (badness 1540) in paragraph at lines 33--35
+\T1/ppl/m/n/9 nor did these cor-re-late strongly with any of the 
  []
 
 <OPENSCIENCE.pdf, id=147, 153.57375pt x 33.12375pt>
@@ -972,6 +1022,10 @@ Overfull \hbox (170.71654pt too wide) in paragraph at lines 40--40
 
 
 Package xcolor Warning: Incompatible color definition on input line 40.
+
+
+Overfull \vbox (17.68341pt too high) detected at line 40
+ []
 
 
 Overfull \hbox (11.48364pt too wide) in paragraph at lines 40--40
@@ -1129,7 +1183,7 @@ Package pdftex.def Info: ../pilot_experiment/scratch/rt.pdf  used on input line
 Package xcolor Warning: Incompatible color definition on input line 84.
 
 
-Package xcolor Warning: Incompatible color definition on input line 87.
+Package xcolor Warning: Incompatible color definition on input line 86.
 
 
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
@@ -1153,10 +1207,7 @@ Package pdftex.def Info: ../analysis/scratch/pilot_plot.pdf  used on input line
 Package xcolor Warning: Incompatible color definition on input line 97.
 
 
-Package xcolor Warning: Incompatible color definition on input line 109.
-
-
-Package xcolor Warning: Incompatible color definition on input line 109.
+Package xcolor Warning: Incompatible color definition on input line 107.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1164,9 +1215,12 @@ Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 [5 <../analysis/scratch/pilot_prior_plot.pdf> <../analysis/scratch/pilot_plot.p
 df>]
+
+Package xcolor Warning: Incompatible color definition on input line 109.
+
 LaTeX Font Info:    Trying to load font information for T1+pcr on input line 11
 3.
- (/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+(/usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
@@ -1177,7 +1231,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 Package xcolor Warning: Incompatible color definition on input line 117.
 
-<Figures/IMG_7939.jpg, id=301, 2457.18pt x 3276.24pt>
+<Figures/IMG_7939.jpg, id=300, 2457.18pt x 3276.24pt>
 File: Figures/IMG_7939.jpg Graphic file (type jpg)
 <use Figures/IMG_7939.jpg>
 Package pdftex.def Info: Figures/IMG_7939.jpg  used on input line 123.
@@ -1191,7 +1245,7 @@ Underfull \hbox (badness 10000) detected at line 124
 Package xcolor Warning: Incompatible color definition on input line 128.
 
 
-Package xcolor Warning: Incompatible color definition on input line 132.
+Package xcolor Warning: Incompatible color definition on input line 131.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1234,6 +1288,18 @@ Package xcolor Warning: Incompatible color definition on input line 159.
 Package xcolor Warning: Incompatible color definition on input line 161.
 
 
+Underfull \hbox (badness 1314) in paragraph at lines 163--164
+\T1/ppl/m/n/9 of the Big Five In-ven-tory (BFI-2 [[]]). The BFI-2 mea-sures fiv
+e broad per-son-al-ity traits:
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 163--164
+\T1/ppl/m/n/9 ex-traver-sion (e.g., ``is out-go-ing, so-cia-ble''), agree-able-
+ness (e.g., ``has a for-giv-ing na-ture''),
+ []
+
+
 Package xcolor Warning: Incompatible color definition on input line 169.
 
 
@@ -1254,7 +1320,7 @@ Package xcolor Warning: Incompatible color definition on input line 183.
 Package xcolor Warning: Incompatible color definition on input line 185.
 
 
-Package xcolor Warning: Incompatible color definition on input line 189.
+Package xcolor Warning: Incompatible color definition on input line 188.
 
 
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
@@ -1395,13 +1461,13 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 1D693C608E93F08CD7338323A6155286;5062.
  ) 
 Here is how much of TeX's memory you used:
- 22284 strings out of 478994
- 398034 string characters out of 5858184
- 685776 words of memory out of 5000000
- 39164 multiletter control sequences out of 15000+600000
- 475180 words of font info for 147 fonts, out of 8000000 for 9000
+ 22283 strings out of 478994
+ 398021 string characters out of 5858184
+ 686776 words of memory out of 5000000
+ 39163 multiletter control sequences out of 15000+600000
+ 474249 words of font info for 146 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
- 102i,14n,102p,1612b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 102i,14n,102p,1708b,462s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/tex
 live/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texli
@@ -1421,7 +1487,7 @@ etic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uh
 vro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (14 pages, 2233875 bytes).
+Output written on paper.pdf (14 pages, 2234360 bytes).
 PDF statistics:
  559 PDF objects out of 1000 (max. 8388607)
  471 compressed objects within 5 object streams
