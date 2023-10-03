@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2021)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: paper_nomarkup.aux
+The style file: rs.bst
+Database file #1: literature.bib
+I was expecting a `,' or a `}'---line 328 of file literature.bib
+ : 
+ : keywords = {foraging, working memory, inhibitory control, visual search, attention},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 374 of file literature.bib
+ : @article{johannesson2017
+ :                         ,
+I'm skipping whatever remains of this entry
+You've used 27 entries,
+            2202 wiz_defined-function locations,
+            672 strings with 8897 characters,
+and the built_in function-call counts, 10987 in all, are:
+= -- 1092
+> -- 540
+< -- 18
++ -- 172
+- -- 162
+* -- 1017
+:= -- 1890
+add.period$ -- 33
+call.type$ -- 27
+change.case$ -- 189
+chr.to.int$ -- 27
+cite$ -- 27
+duplicate$ -- 429
+empty$ -- 731
+format.name$ -- 205
+if$ -- 2215
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 90
+num.names$ -- 81
+pop$ -- 176
+preamble$ -- 1
+purify$ -- 216
+quote$ -- 0
+skip$ -- 334
+stack$ -- 0
+substring$ -- 691
+swap$ -- 107
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 158
+warning$ -- 0
+while$ -- 82
+width$ -- 0
+write$ -- 247
+(There were 2 error messages)
