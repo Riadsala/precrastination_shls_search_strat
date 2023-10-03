@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  3 OCT 2023 09:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.12.3)  3 OCT 2023 10:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -857,27 +857,6 @@ most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
 loading the todonotes package. on input line 9.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
-
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+euex on input line 20
-.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuex.fd
-File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
-)
-Underfull \hbox (badness 10000) in paragraph at lines 20--23
-
- []
-
 
 Underfull \hbox (badness 6001) in paragraph at lines 33--35
 \T1/ppl/m/n/9 many par-tic-i-pants con-sis-tently move their eyes 
@@ -958,20 +937,7 @@ Underfull \hbox (badness 1540) in paragraph at lines 33--35
 \T1/ppl/m/n/9 nor did these cor-re-late strongly with any of the 
  []
 
-LaTeX Font Info:    Font shape `T1/phv/b/n' will be
-(Font)              scaled to size 7.65005pt on input line 40.
-
-Package xcolor Warning: Incompatible color definition on input line 40.
-
-
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
-
-
-[1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-<OPENSCIENCE.pdf, id=156, 153.57375pt x 33.12375pt>
+<OPENSCIENCE.pdf, id=147, 153.57375pt x 33.12375pt>
 File: OPENSCIENCE.pdf Graphic file (type pdf)
 <use OPENSCIENCE.pdf>
 Package pdftex.def Info: OPENSCIENCE.pdf  used on input line 40.
@@ -993,12 +959,12 @@ Overfull \hbox (13.63518pt too wide) in paragraph at lines 40--40
 
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 15.30011pt on input line 40.
-<OpenAccesslogo_bw.pdf, id=158, 20.075pt x 32.12pt>
+<OpenAccesslogo_bw.pdf, id=149, 20.075pt x 32.12pt>
 File: OpenAccesslogo_bw.pdf Graphic file (type pdf)
 <use OpenAccesslogo_bw.pdf>
 Package pdftex.def Info: OpenAccesslogo_bw.pdf  used on input line 40.
 (pdftex.def)             Requested size: 20.07494pt x 32.1199pt.
-<RS_crossmark_logo.pdf, id=159, 25.92787pt x 32.61584pt>
+<RS_crossmark_logo.pdf, id=150, 25.92787pt x 32.61584pt>
 File: RS_crossmark_logo.pdf Graphic file (type pdf)
 <use RS_crossmark_logo.pdf>
 Package pdftex.def Info: RS_crossmark_logo.pdf  used on input line 40.
@@ -1007,8 +973,26 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 40.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 8.50006pt on input line 40.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 40.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 40.
+
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+euex on input line 40
+.
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuex.fd
+File: ueuex.fd 2013/01/14 v3.01 Euler extra symbols
+)
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 17.00012pt on input line 40.
+
 
 Package xcolor Warning: Incompatible color definition on input line 40.
 
@@ -1040,7 +1024,7 @@ Overfull \hbox (170.71654pt too wide) in paragraph at lines 40--40
 Package xcolor Warning: Incompatible color definition on input line 40.
 
 
-Overfull \vbox (32.68341pt too high) detected at line 40
+Overfull \vbox (47.68341pt too high) detected at line 40
  []
 
 
@@ -1056,7 +1040,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-<RSOS_Pubs_Logo_Line_CMYK.pdf, id=161, 153.57375pt x 20.075pt>
+<RSOS_Pubs_Logo_Line_CMYK.pdf, id=152, 153.57375pt x 20.075pt>
 File: RSOS_Pubs_Logo_Line_CMYK.pdf Graphic file (type pdf)
 <use RSOS_Pubs_Logo_Line_CMYK.pdf>
 Package pdftex.def Info: RSOS_Pubs_Logo_Line_CMYK.pdf  used on input line 41.
@@ -1108,14 +1092,18 @@ Overfull \hbox (14.27687pt too wide) has occurred while \output is active
 []  [][][][][][] 
  []
 
-[2 <./OPENSCIENCE.pdf> <./OpenAccesslogo_bw.pdf> <./RS_crossmark_logo.pdf> <./R
-SOS_Pubs_Logo_Line_CMYK.pdf>]
+[1
+
+
+{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./OPENS
+CIENCE.pdf> <./OpenAccesslogo_bw.pdf> <./RS_crossmark_logo.pdf> <./RSOS_Pubs_Lo
+go_Line_CMYK.pdf>]
 Underfull \hbox (badness 1874) in paragraph at lines 43--44
 []\T1/ppl/m/n/9 experiments show that dif-fer-ent ob-servers utilise dif-fer-en
 t strate-gies [[],[]], with some
  []
 
-<Figures/split-half.png, id=186, 1009.7725pt x 734.745pt>
+<Figures/split-half.png, id=181, 1009.7725pt x 734.745pt>
 File: Figures/split-half.png Graphic file (type png)
 <use Figures/split-half.png>
 Package pdftex.def Info: Figures/split-half.png  used on input line 50.
@@ -1149,14 +1137,16 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
 (Font)              size <5> substituted on input line 51.
 
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.65005pt on input line 61.
 
 Package xcolor Warning: Incompatible color definition on input line 61.
 
 
-Overfull \vbox (21.51176pt too high) has occurred while \output is active []
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[3 <./Figures/split-half.png>]
+[2 <./Figures/split-half.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
@@ -1164,10 +1154,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package xcolor Warning: Incompatible color definition on input line 68.
 
 
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[4]
+[3]
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 13.6001pt on input line 69.
 
@@ -1177,13 +1167,13 @@ Package xcolor Warning: Incompatible color definition on input line 69.
 
 Package xcolor Warning: Incompatible color definition on input line 73.
 
-<../pilot_experiment/scratch/acc.pdf, id=237, 289.08pt x 216.81pt>
+<../pilot_experiment/scratch/acc.pdf, id=232, 289.08pt x 216.81pt>
 File: ../pilot_experiment/scratch/acc.pdf Graphic file (type pdf)
 <use ../pilot_experiment/scratch/acc.pdf>
 Package pdftex.def Info: ../pilot_experiment/scratch/acc.pdf  used on input lin
 e 78.
 (pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../pilot_experiment/scratch/rt.pdf, id=238, 289.08pt x 216.81pt>
+<../pilot_experiment/scratch/rt.pdf, id=233, 289.08pt x 216.81pt>
 File: ../pilot_experiment/scratch/rt.pdf Graphic file (type pdf)
 <use ../pilot_experiment/scratch/rt.pdf>
 Package pdftex.def Info: ../pilot_experiment/scratch/rt.pdf  used on input line
@@ -1196,17 +1186,17 @@ Package xcolor Warning: Incompatible color definition on input line 84.
 Package xcolor Warning: Incompatible color definition on input line 86.
 
 
-Overfull \vbox (21.51176pt too high) has occurred while \output is active []
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[5 <../pilot_experiment/scratch/acc.pdf> <../pilot_experiment/scratch/rt.pdf>]
-<../analysis/scratch/pilot_prior_plot.pdf, id=272, 361.35pt x 289.08pt>
+[4 <../pilot_experiment/scratch/acc.pdf> <../pilot_experiment/scratch/rt.pdf>]
+<../analysis/scratch/pilot_prior_plot.pdf, id=267, 361.35pt x 289.08pt>
 File: ../analysis/scratch/pilot_prior_plot.pdf Graphic file (type pdf)
 <use ../analysis/scratch/pilot_prior_plot.pdf>
 Package pdftex.def Info: ../analysis/scratch/pilot_prior_plot.pdf  used on inpu
 t line 91.
 (pdftex.def)             Requested size: 170.71652pt x 136.57336pt.
-<../analysis/scratch/pilot_plot.pdf, id=273, 361.35pt x 289.08pt>
+<../analysis/scratch/pilot_plot.pdf, id=268, 361.35pt x 289.08pt>
 File: ../analysis/scratch/pilot_plot.pdf Graphic file (type pdf)
 <use ../analysis/scratch/pilot_plot.pdf>
 Package pdftex.def Info: ../analysis/scratch/pilot_plot.pdf  used on input line
@@ -1223,7 +1213,7 @@ Package xcolor Warning: Incompatible color definition on input line 107.
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[6 <../analysis/scratch/pilot_prior_plot.pdf> <../analysis/scratch/pilot_plot.p
+[5 <../analysis/scratch/pilot_prior_plot.pdf> <../analysis/scratch/pilot_plot.p
 df>]
 
 Package xcolor Warning: Incompatible color definition on input line 109.
@@ -1241,7 +1231,7 @@ LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 
 Package xcolor Warning: Incompatible color definition on input line 117.
 
-<Figures/IMG_7939.jpg, id=304, 2457.18pt x 3276.24pt>
+<Figures/IMG_7939.jpg, id=300, 2457.18pt x 3276.24pt>
 File: Figures/IMG_7939.jpg Graphic file (type jpg)
 <use Figures/IMG_7939.jpg>
 Package pdftex.def Info: Figures/IMG_7939.jpg  used on input line 123.
@@ -1258,10 +1248,10 @@ Package xcolor Warning: Incompatible color definition on input line 128.
 Package xcolor Warning: Incompatible color definition on input line 131.
 
 
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[7 <./Figures/IMG_7939.jpg>]
+[6 <./Figures/IMG_7939.jpg>]
 
 Package xcolor Warning: Incompatible color definition on input line 132.
 
@@ -1271,7 +1261,7 @@ Package xcolor Warning: Incompatible color definition on input line 138.
 
 Package xcolor Warning: Incompatible color definition on input line 140.
 
-<Figures/using_smaller_sample_sizes.pdf, id=324, 289.08pt x 289.08pt>
+<Figures/using_smaller_sample_sizes.pdf, id=319, 289.08pt x 289.08pt>
 File: Figures/using_smaller_sample_sizes.pdf Graphic file (type pdf)
 <use Figures/using_smaller_sample_sizes.pdf>
 Package pdftex.def Info: Figures/using_smaller_sample_sizes.pdf  used on input 
@@ -1287,10 +1277,10 @@ Package xcolor Warning: Incompatible color definition on input line 155.
 Package xcolor Warning: Incompatible color definition on input line 158.
 
 
-Overfull \vbox (21.51176pt too high) has occurred while \output is active []
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[8]
+[7]
 
 Package xcolor Warning: Incompatible color definition on input line 159.
 
@@ -1319,7 +1309,7 @@ Package xcolor Warning: Incompatible color definition on input line 174.
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[9 <./Figures/using_smaller_sample_sizes.pdf>]
+[8 <./Figures/using_smaller_sample_sizes.pdf>]
 
 Package xcolor Warning: Incompatible color definition on input line 175.
 
@@ -1336,20 +1326,20 @@ Package xcolor Warning: Incompatible color definition on input line 188.
 Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[10]
+[9]
 
 Package xcolor Warning: Incompatible color definition on input line 189.
 
 
 Package xcolor Warning: Incompatible color definition on input line 193.
 
-<../analysis/scratch/acc_main.pdf, id=375, 289.08pt x 216.81pt>
+<../analysis/scratch/acc_main.pdf, id=371, 289.08pt x 216.81pt>
 File: ../analysis/scratch/acc_main.pdf Graphic file (type pdf)
 <use ../analysis/scratch/acc_main.pdf>
 Package pdftex.def Info: ../analysis/scratch/acc_main.pdf  used on input line 2
 00.
 (pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../analysis/scratch/rt_main.pdf, id=376, 289.08pt x 216.81pt>
+<../analysis/scratch/rt_main.pdf, id=372, 289.08pt x 216.81pt>
 File: ../analysis/scratch/rt_main.pdf Graphic file (type pdf)
 <use ../analysis/scratch/rt_main.pdf>
 Package pdftex.def Info: ../analysis/scratch/rt_main.pdf  used on input line 20
@@ -1358,13 +1348,13 @@ Package pdftex.def Info: ../analysis/scratch/rt_main.pdf  used on input line 20
 
 Package xcolor Warning: Incompatible color definition on input line 206.
 
-<../analysis/scratch/strat_hist.pdf, id=378, 289.08pt x 216.81pt>
+<../analysis/scratch/strat_hist.pdf, id=374, 289.08pt x 216.81pt>
 File: ../analysis/scratch/strat_hist.pdf Graphic file (type pdf)
 <use ../analysis/scratch/strat_hist.pdf>
 Package pdftex.def Info: ../analysis/scratch/strat_hist.pdf  used on input line
  212.
 (pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../analysis/scratch/pre_crastinate.pdf, id=379, 289.08pt x 216.81pt>
+<../analysis/scratch/pre_crastinate.pdf, id=375, 289.08pt x 216.81pt>
 File: ../analysis/scratch/pre_crastinate.pdf Graphic file (type pdf)
 <use ../analysis/scratch/pre_crastinate.pdf>
 Package pdftex.def Info: ../analysis/scratch/pre_crastinate.pdf  used on input 
@@ -1373,13 +1363,13 @@ line 213.
 
 Package xcolor Warning: Incompatible color definition on input line 218.
 
-<../analysis/scratch/post_plot.pdf, id=381, 289.08pt x 216.81pt>
+<../analysis/scratch/post_plot.pdf, id=377, 289.08pt x 216.81pt>
 File: ../analysis/scratch/post_plot.pdf Graphic file (type pdf)
 <use ../analysis/scratch/post_plot.pdf>
 Package pdftex.def Info: ../analysis/scratch/post_plot.pdf  used on input line 
 224.
 (pdftex.def)             Requested size: 170.71652pt x 128.03587pt.
-<../analysis/scratch/pre_cras_consc.pdf, id=382, 289.08pt x 216.81pt>
+<../analysis/scratch/pre_cras_consc.pdf, id=378, 289.08pt x 216.81pt>
 File: ../analysis/scratch/pre_cras_consc.pdf Graphic file (type pdf)
 <use ../analysis/scratch/pre_cras_consc.pdf>
 Package pdftex.def Info: ../analysis/scratch/pre_cras_consc.pdf  used on input 
@@ -1389,10 +1379,10 @@ line 225.
 Package xcolor Warning: Incompatible color definition on input line 228.
 
 
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[11 <../analysis/scratch/acc_main.pdf> <../analysis/scratch/rt_main.pdf>]
+[10 <../analysis/scratch/acc_main.pdf> <../analysis/scratch/rt_main.pdf>]
 Underfull \hbox (badness 1242) in paragraph at lines 230--231
 []\T1/ppl/m/n/9 Our fi-nal reg-is-tered hy-poth-e-sis con-cerns the re-la-tion-
 ship be-tween pre-crastination and
@@ -1404,7 +1394,7 @@ Package xcolor Warning: Incompatible color definition on input line 233.
 
 Package xcolor Warning: Incompatible color definition on input line 237.
 
-<../analysis/scratch/exp_strat.pdf, id=411, 433.62pt x 216.81pt>
+<../analysis/scratch/exp_strat.pdf, id=407, 433.62pt x 216.81pt>
 File: ../analysis/scratch/exp_strat.pdf Graphic file (type pdf)
 <use ../analysis/scratch/exp_strat.pdf>
 Package pdftex.def Info: ../analysis/scratch/exp_strat.pdf  used on input line 
@@ -1421,7 +1411,7 @@ Package xcolor Warning: Incompatible color definition on input line 246.
 Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[12 <../analysis/scratch/strat_hist.pdf> <../analysis/scratch/pre_crastinate.pd
+[11 <../analysis/scratch/strat_hist.pdf> <../analysis/scratch/pre_crastinate.pd
 f> <../analysis/scratch/post_plot.pdf> <../analysis/scratch/pre_cras_consc.pdf>
 ]
 
@@ -1440,10 +1430,10 @@ Package xcolor Warning: Incompatible color definition on input line 258.
 Package xcolor Warning: Incompatible color definition on input line 260.
 
 
-Overfull \vbox (21.51176pt too high) has occurred while \output is active []
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[13 <../analysis/scratch/exp_strat.pdf>] (./paper.bbl
+[12 <../analysis/scratch/exp_strat.pdf>] (./paper.bbl
 
 Package xcolor Warning: Incompatible color definition on input line 1.
 
@@ -1451,18 +1441,18 @@ Package xcolor Warning: Incompatible color definition on input line 1.
 Package xcolor Warning: Incompatible color definition on input line 29.
 
 
-Overfull \vbox (21.4162pt too high) has occurred while \output is active []
+Overfull \vbox (21.51176pt too high) has occurred while \output is active []
 
 
-[14]) Setting LastPage
+[13]) Setting LastPage
 
 Package xcolor Warning: Incompatible color definition on input line 270.
 
 
-Overfull \vbox (21.51176pt too high) has occurred while \output is active []
+Overfull \vbox (21.4162pt too high) has occurred while \output is active []
 
 
-[15] (./paper.aux)
+[14] (./paper.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.25pt have occurred.
@@ -1471,9 +1461,9 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 1D693C608E93F08CD7338323A6155286;5062.
  ) 
 Here is how much of TeX's memory you used:
- 22284 strings out of 478994
- 398028 string characters out of 5858184
- 686775 words of memory out of 5000000
+ 22283 strings out of 478994
+ 398021 string characters out of 5858184
+ 686776 words of memory out of 5000000
  39163 multiletter control sequences out of 15000+600000
  474249 words of font info for 146 fonts, out of 8000000 for 9000
  1151 hyphenation exceptions out of 8191
@@ -1497,10 +1487,10 @@ etic/uhvr8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uh
 vro8a.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplb8a.p
 fb></usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></us
 r/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on paper.pdf (15 pages, 2235286 bytes).
+Output written on paper.pdf (14 pages, 2234705 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 474 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
+ 559 PDF objects out of 1000 (max. 8388607)
+ 471 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

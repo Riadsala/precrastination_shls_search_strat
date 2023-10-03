@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex paper"] 1696323094 "paper.aux" "paper.bbl" "paper" 1696323096
+["bibtex paper"] 1696323642 "paper.aux" "paper.bbl" "paper" 1696323644
   "./rs.bst" 1570526553 20654 9775db7ab4ae324750659b5ec0af2adc ""
   "literature.bib" 1579686990 16803 7d2c628aa533fd0f22807e301f9b71bc ""
-  "paper.aux" 1696323095 14169 5d46b39a61e6a237d13e3652240beba3 "pdflatex"
+  "paper.aux" 1696323643 14166 05affbae313ee8407d5b3975ca903eec "pdflatex"
   (generated)
   "paper.bbl"
   "paper.blg"
-["pdflatex"] 1696323094 "paper.tex" "paper.pdf" "paper" 1696323096
+["pdflatex"] 1696323642 "paper.tex" "paper.pdf" "paper" 1696323644
   "../analysis/scratch/acc_main.pdf" 1693565276 5761 b2623408f519a5bb28c645b16cd17799 ""
   "../analysis/scratch/exp_strat.pdf" 1693817953 5668 2d35ec9144d893876b8fab1dceb69776 ""
   "../analysis/scratch/pilot_plot.pdf" 1693565284 12988 24babf983b295817fc9a281692e71249 ""
@@ -254,13 +254,13 @@
   "OpenAccesslogo_bw.pdf" 1570526553 13234 9c37d6436deac165264324b958c1144b ""
   "RSOS_Pubs_Logo_Line_CMYK.pdf" 1570526553 15433 0e35d9b4538f91ac7d0320915fe3e0ef ""
   "RS_crossmark_logo.pdf" 1570526553 35286 83e555b3eba2241e1937afc601418935 ""
-  "paper.aux" 1696323095 14169 5d46b39a61e6a237d13e3652240beba3 "pdflatex"
-  "paper.bbl" 1696323094 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
-  "paper.out" 1696323095 5062 1d693c608e93f08cd7338323a6155286 "pdflatex"
-  "paper.tex" 1696323092 44722 eac8c96f9b26d21c53748cded73d1cbe ""
+  "paper.aux" 1696323643 14166 05affbae313ee8407d5b3975ca903eec "pdflatex"
+  "paper.bbl" 1696323642 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
+  "paper.out" 1696323643 5062 1d693c608e93f08cd7338323a6155286 "pdflatex"
+  "paper.tex" 1696323640 44722 719466a44ae21d92c3c56fcbb95f97c9 ""
   "rsos.cls" 1570526553 50432 d1c32964697032cc41b6405fa0c48058 ""
   (generated)
-  "paper.log"
-  "paper.aux"
   "paper.pdf"
+  "paper.aux"
+  "paper.log"
   "paper.out"
