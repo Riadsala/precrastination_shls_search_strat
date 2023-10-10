@@ -20,7 +20,7 @@ set.seed(2022)
 library(rethinking)
 library(tidyverse)
 library(patchwork)
-
+library(corrplot)
 ```
 
 ```{r}
@@ -29,6 +29,9 @@ theme_set(ggthemes::theme_tufte() +
             theme(plot.background = element_rect(fill = "#fffff8", 
                                                  colour = "#fffff8")))
 
+our_cols <- c("#1b9e77", "#7570b3")
+options(ggplot2.discrete.fill = our_cols ,
+        ggplot2.discrete.colour = our_cols)
 ```
 
 # Import data
@@ -41,13 +44,55 @@ dat_p <- read_csv("scratch/prcrastination_and_personality.csv") %>%
   mutate(pre_crastinate = as_factor(pre_crastinate),
          pre_crastinate = fct_relevel(pre_crastinate, "no", "intermediate", "yes"))
 
-
 dat <- full_join(dat_s %>% filter(targ_side_rel == "absent"), 
           dat_p, 
           by = c("person", "site"))
 ```
 
-# Calculate Correlations
+# Guessing beads
+
+```{r}
+dat %>% filter(is.finite(n_beads)) -> dat_beads
+
+ggplot(dat_beads, aes(n_beads)) + geom_histogram(binwidth = 1) +
+  scale_x_continuous("number beads sampled", breaks = 1:10)
+
+xlab <- tibble(black = c(0,0,0,1,1,1,1,1,2,2),
+               orange= c(1,2,3,3,4,5,6,7,7,8),
+               probA = 0.8^black * 0.2^orange,
+               probB = 0.2^black * 0.8^orange,
+               llr = probB / probA)
+
+ggplot(dat_beads, aes(n_beads)) + geom_histogram(binwidth = 1) +
+  scale_x_continuous("llh ratio", breaks = 1:10, labels = xlab$llr)
+```
+## Link with pre-crastination
+
+```{r}
+ggplot(dat_beads, aes(pre_crastinate, n_beads, fill = pre_crastinate)) + 
+         geom_boxplot(alpha = 0.5) + 
+  scale_y_continuous("number beads sampled") +
+  theme(legend.position = "none")
+```
+
+## Link with visual search strategey
+
+```{r}
+ggplot(dat_beads, aes(as_factor(n_beads), prop_hard)) + 
+         geom_boxplot(alpha = 0.5, fill = "purple") +
+  scale_x_discrete("number beads sampled") +
+  scale_y_continuous("visual search strategy")
+```
+
+
+
+
+
+
+
+# Calculate Personality Correlations
+
+## With Our Measures 
 
 ```{r}
 measures <- factor(1:10, labels = c("BIStotal", "attentional_imp", "motor_imp", "nonplan_imp",
@@ -66,16 +111,18 @@ get_rd_int <- function(measure) {
   
   d <- t.test(dps[[measure]] ~ dps$pre_crastinate)
   
+  r_beads <- cor.test(dat$n_beads, dat[[measure]])
+  
   d_out <- tibble(measure = measure,
-                  lower = c(r$conf.int[[1]], d$conf.int[[1]]),
-                  upper = c(r$conf.int[[2]], d$conf.int[[2]]),
-                  feature = c("search", "pre-crastination"))
+                  lower = c(r$conf.int[[1]], d$conf.int[[1]], r_beads$conf.int[[1]]),
+                  upper = c(r$conf.int[[2]], d$conf.int[[2]], r_beads$conf.int[[2]]),
+                  feature = c("search", "pre-crastination", "beads"))
   return(d_out)
 }
 
 dr <- map_df(measures, get_rd_int)
 
-dr$col <- as_factor(rep(c(1,1,1,1,2,2,2,2,2,3), each = 2))
+dr$col <- as_factor(rep(c(1,1,1,1,2,2,2,2,2,3), each = 3))
 
 ggplot(dr, aes(xmin = lower, xmax = upper, y = measure, colour = col)) +
   geom_linerange(linewidth = 2, alpha = 0.7) +
@@ -92,3 +139,58 @@ ggsave("scratch/exp_strat.pdf", plt + theme_bw()+
 ggsave("scratch/exp_strat.png", plt + theme_bw()+
   theme(legend.position = "none"), width = 6, height = 3)
 ```
+
+## With themselves
+
+```{r, fig.height=12}
+
+dat %>% select(-person, -site, -targ_side_rel, -bead_colour, -pre_crastinate,
+               -prop_hard, -median_rt, -accuracy, -n_pc, -n_beads) %>%
+  na.omit -> dat_c
+
+m <- cor(dat_c)
+corrplot(m, method = "number")
+```
+
+
+# Self-Report
+
+First, get relevant data:
+
+```{r}
+dat %>% select(person, Vsearch_YesNo, prop_hard, Bucket_YesNo, pre_crastinate) %>%
+  mutate(Vsearch_YesNo = factor(Vsearch_YesNo, labels = c("no", "yes")),
+         Bucket_YesNo = factor(Bucket_YesNo, labels = c("no", "yes"))) %>%
+  na.omit() -> dat_sr
+
+```
+
+
+## Visual Search
+
+```{r}
+
+ggplot(dat_sr, aes(Vsearch_YesNo, prop_hard, fill = Vsearch_YesNo)) + geom_boxplot(alpha = 0.5)
+
+
+t.test(filter(dat_sr, Vsearch_YesNo == "no")$prop_hard, filter(dat_sr, Vsearch_YesNo == "yes")$prop_hard)
+
+t.test(filter(dat_sr, pre_crastinate == "no")$prop_hard, filter(dat_sr, pre_crastinate == "yes")$prop_hard)
+```
+
+## Buckets
+
+```{r}
+
+dat_sr %>% group_by(Bucket_YesNo, pre_crastinate) %>%
+  summarise(n = n()) %>%
+  ggplot(aes(pre_crastinate, n, fill = Bucket_YesNo )) + 
+  geom_col(position = position_dodge(), alpha = 0.5) +
+  scale_fill_discrete("Self-report strategy?")
+
+
+chisq.test(dat_sr$Bucket_YesNo, dat_sr$pre_crastinate)
+
+```
+
+

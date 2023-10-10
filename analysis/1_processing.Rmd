@@ -271,7 +271,6 @@ dat_p %>% pivot_longer(procras_qs, names_to = "ProscaleID", values_to = "score")
 
 rm(d_BFI)
 
-
 dat_p %>% select(person, starts_with("BIS11_")) %>%
   pivot_longer(-person, names_to = "item", values_to = "resp") %>%
   separate(item, into = c("BIS", "item")) %>%
@@ -289,7 +288,7 @@ dat_p %>% select(person, starts_with("BIS11_")) %>%
   full_join(dat_p2, by = "person") -> dat_p2
 
 dat <- full_join(dat_p2, dat_pc) %>% 
-  full_join(dat_p %>% select(person, bead_colour, n_beads))
+  full_join(dat_p %>% select(person, bead_colour, n_beads, Vsearch_YesNo, Bucket_YesNo))
 
 write_csv(dat, "scratch/prcrastination_and_personality.csv")
 

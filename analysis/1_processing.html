@@ -387,7 +387,6 @@ dat_p %&gt;% pivot_longer(procras_qs, names_to = &quot;ProscaleID&quot;, values_
 ## generated.</code></pre>
 <pre class="r"><code>rm(d_BFI)
 
-
 dat_p %&gt;% select(person, starts_with(&quot;BIS11_&quot;)) %&gt;%
   pivot_longer(-person, names_to = &quot;item&quot;, values_to = &quot;resp&quot;) %&gt;%
   separate(item, into = c(&quot;BIS&quot;, &quot;item&quot;)) %&gt;%
@@ -405,7 +404,7 @@ dat_p %&gt;% select(person, starts_with(&quot;BIS11_&quot;)) %&gt;%
   full_join(dat_p2, by = &quot;person&quot;) -&gt; dat_p2
 
 dat &lt;- full_join(dat_p2, dat_pc) %&gt;% 
-  full_join(dat_p %&gt;% select(person, bead_colour, n_beads))</code></pre>
+  full_join(dat_p %&gt;% select(person, bead_colour, n_beads, Vsearch_YesNo, Bucket_YesNo))</code></pre>
 <pre><code>## Joining, by = &quot;person&quot;
 ## Joining, by = &quot;person&quot;</code></pre>
 <pre class="r"><code>write_csv(dat, &quot;scratch/prcrastination_and_personality.csv&quot;)</code></pre>
