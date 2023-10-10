@@ -288,7 +288,8 @@ dat_p %>% select(person, starts_with("BIS11_")) %>%
   select(person = "person", BIStotal, attentional_imp, motor_imp, nonplan_imp)  %>%
   full_join(dat_p2, by = "person") -> dat_p2
 
-dat <- full_join(dat_p2, dat_pc) 
+dat <- full_join(dat_p2, dat_pc) %>% 
+  full_join(dat_p %>% select(person, bead_colour, n_beads))
 
 write_csv(dat, "scratch/prcrastination_and_personality.csv")
 

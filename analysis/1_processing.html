@@ -312,14 +312,6 @@ knitr::kable(dpc)</code></pre>
 <h1><span class="header-section-number">3</span> Personality</h1>
 <p>Read in personality data and compute overall scores.</p>
 <pre class="r"><code>dat_p &lt;- read_csv(&quot;../data/personality_q.csv&quot;) </code></pre>
-<pre><code>## Rows: 304 Columns: 137
-## ── Column specification ────────────────────────────────────────────────────────
-## Delimiter: &quot;,&quot;
-## chr  (17): bead_colour, Vsearch_Strategy, Bucket_Strategy, Gender, Ethnicity...
-## dbl (120): person, n_beads, Duration_in_Seconds, Vsearch_YesNo, Bucket_YesNo...
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <p>We have data from 304 people.</p>
 <pre class="r"><code># creating list of questions
 procras_qs &lt;- names(dat_p)[str_detect(names(dat_p), &quot;ProScale&quot;)]
@@ -412,8 +404,10 @@ dat_p %&gt;% select(person, starts_with(&quot;BIS11_&quot;)) %&gt;%
   select(person = &quot;person&quot;, BIStotal, attentional_imp, motor_imp, nonplan_imp)  %&gt;%
   full_join(dat_p2, by = &quot;person&quot;) -&gt; dat_p2
 
-dat &lt;- full_join(dat_p2, dat_pc) </code></pre>
-<pre><code>## Joining, by = &quot;person&quot;</code></pre>
+dat &lt;- full_join(dat_p2, dat_pc) %&gt;% 
+  full_join(dat_p %&gt;% select(person, bead_colour, n_beads))</code></pre>
+<pre><code>## Joining, by = &quot;person&quot;
+## Joining, by = &quot;person&quot;</code></pre>
 <pre class="r"><code>write_csv(dat, &quot;scratch/prcrastination_and_personality.csv&quot;)</code></pre>
 </div>
 
