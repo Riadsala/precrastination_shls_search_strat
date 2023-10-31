@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex paper"] 1696323642 "paper.aux" "paper.bbl" "paper" 1696323644
+["bibtex paper"] 1697445171 "paper.aux" "paper.bbl" "paper" 1697445172
   "./rs.bst" 1570526553 20654 9775db7ab4ae324750659b5ec0af2adc ""
   "literature.bib" 1579686990 16803 7d2c628aa533fd0f22807e301f9b71bc ""
-  "paper.aux" 1696323643 14166 05affbae313ee8407d5b3975ca903eec "pdflatex"
+  "paper.aux" 1697445172 14167 f9a257d2e75ecb8bd27809ab7de05519 "pdflatex"
   (generated)
   "paper.bbl"
   "paper.blg"
-["pdflatex"] 1696323642 "paper.tex" "paper.pdf" "paper" 1696323644
+["pdflatex"] 1697445171 "paper.tex" "paper.pdf" "paper" 1697445172
   "../analysis/scratch/acc_main.pdf" 1693565276 5761 b2623408f519a5bb28c645b16cd17799 ""
-  "../analysis/scratch/exp_strat.pdf" 1693817953 5668 2d35ec9144d893876b8fab1dceb69776 ""
+  "../analysis/scratch/exp_strat.pdf" 1696935576 6036 0e13f5f4c2015856cda1c338468b896b ""
   "../analysis/scratch/pilot_plot.pdf" 1693565284 12988 24babf983b295817fc9a281692e71249 ""
   "../analysis/scratch/pilot_prior_plot.pdf" 1693565282 11045 8780c42b16f672eec4120461e7083f70 ""
   "../analysis/scratch/post_plot.pdf" 1693565335 9888 74964337c50001fc6ad30e84885be03a ""
@@ -22,6 +22,8 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1136768653 1292 bd42be2f344128bff6d35d98474adfe3 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm" 1136768653 1384 4632f5e54900a7dadbb83f555bc61e56 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrro8r.tfm" 1136768653 1544 4fb84cf2931ec523c2c6a08d939088ba ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrro8t.tfm" 1136768653 1596 04a657f277f0401ba37d66e716627ac4 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1136768653 4484 b828043cbd581d289d955903c1339981 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvb8t.tfm" 1136768653 6628 34c39492c0adc454c1c199922bba8363 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8c.tfm" 1136768653 1348 c311631dfec4123b7faa7f864709e626 ""
@@ -79,6 +81,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1248133631 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb" 1136849748 44404 ea3d9c0311883914133975dd62a9185c ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1136849748 35941 f27169cc74234d5bd5e4cca5abafaabb ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb" 1136849748 44648 23115b2a545ebfe2c526c3ca99db8b95 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb" 1136849748 48169 b4fd9d908b9ee8c65d4305ad39071c5e ""
@@ -86,6 +89,7 @@
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb" 1136849748 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb" 1136849748 50022 90249cba7e3e4e9845f80328d6f9bd13 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf" 1136768653 2184 8475af1b9cfa983db5f46f5ed4b8f9f7 ""
+  "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/courier/pcrro8t.vf" 1136768653 2280 d7cd083c724c9449e1d12731253966f7 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf" 1136768653 2340 0efed6a948c3c37d870e4e7ddb85c7c3 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf" 1136768653 3556 570286160ebfdd10d887aaa718e2e64d ""
   "/usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf" 1136768653 2344 44ff28c9ef2fc97180cd884f900fee71 ""
@@ -254,13 +258,13 @@
   "OpenAccesslogo_bw.pdf" 1570526553 13234 9c37d6436deac165264324b958c1144b ""
   "RSOS_Pubs_Logo_Line_CMYK.pdf" 1570526553 15433 0e35d9b4538f91ac7d0320915fe3e0ef ""
   "RS_crossmark_logo.pdf" 1570526553 35286 83e555b3eba2241e1937afc601418935 ""
-  "paper.aux" 1696323643 14166 05affbae313ee8407d5b3975ca903eec "pdflatex"
-  "paper.bbl" 1696323642 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
-  "paper.out" 1696323643 5062 1d693c608e93f08cd7338323a6155286 "pdflatex"
-  "paper.tex" 1696323640 44722 719466a44ae21d92c3c56fcbb95f97c9 ""
+  "paper.aux" 1697445172 14167 f9a257d2e75ecb8bd27809ab7de05519 "pdflatex"
+  "paper.bbl" 1697445171 5245 d1d36b42f1ba98a42f223f0b3d563068 "bibtex paper"
+  "paper.out" 1697445172 5062 1d693c608e93f08cd7338323a6155286 "pdflatex"
+  "paper.tex" 1697445169 45053 d4807c4e2c3903e87d033217657d8381 ""
   "rsos.cls" 1570526553 50432 d1c32964697032cc41b6405fa0c48058 ""
   (generated)
-  "paper.pdf"
-  "paper.aux"
   "paper.log"
+  "paper.aux"
   "paper.out"
+  "paper.pdf"

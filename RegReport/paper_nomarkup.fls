@@ -1163,6 +1163,11 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8c.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrro8t.tfm
 INPUT ./Figures/split-half.png
 INPUT ./Figures/split-half.png
 INPUT Figures/split-half.png
@@ -1194,6 +1199,8 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/helvetic/phvr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8r.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/courier/pcrro8t.vf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrro8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/vf/adobe/palatino/pplr8t.vf
@@ -1221,10 +1228,6 @@ INPUT ../analysis/scratch/pilot_plot.pdf
 INPUT ../analysis/scratch/pilot_plot.pdf
 INPUT ../analysis/scratch/pilot_plot.pdf
 INPUT ../analysis/scratch/pilot_plot.pdf
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
-INPUT /usr/local/texlive/2021/texmf-dist/tex/latex/psnfss/t1pcr.fd
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/helvetic/phvr8t.tfm
 INPUT ./Figures/IMG_7939.jpg
@@ -1261,6 +1264,7 @@ INPUT ../analysis/scratch/pre_crastinate.pdf
 INPUT ../analysis/scratch/pre_crastinate.pdf
 INPUT ../analysis/scratch/pre_crastinate.pdf
 INPUT ../analysis/scratch/pre_crastinate.pdf
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/adobe/palatino/pplr8t.tfm
 INPUT ../analysis/scratch/post_plot.pdf
 INPUT ../analysis/scratch/post_plot.pdf
 INPUT ../analysis/scratch/post_plot.pdf
@@ -1303,6 +1307,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb
