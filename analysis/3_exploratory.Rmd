@@ -111,18 +111,18 @@ get_rd_int <- function(measure) {
   
   d <- t.test(dps[[measure]] ~ dps$pre_crastinate)
   
-  r_beads <- cor.test(dat$n_beads, dat[[measure]])
+  #r_beads <- cor.test(dat$n_beads, dat[[measure]])
   
   d_out <- tibble(measure = measure,
-                  lower = c(r$conf.int[[1]], d$conf.int[[1]], r_beads$conf.int[[1]]),
-                  upper = c(r$conf.int[[2]], d$conf.int[[2]], r_beads$conf.int[[2]]),
-                  feature = c("search", "pre-crastination", "beads"))
+                  lower = c(r$conf.int[[1]], d$conf.int[[1]]),#, r_beads$conf.int[[1]]
+                  upper = c(r$conf.int[[2]], d$conf.int[[2]]), #  r_beads$conf.int[[2]]
+                  feature = c("search", "pre-crastination")) #, "beads"
   return(d_out)
 }
 
 dr <- map_df(measures, get_rd_int)
 
-dr$col <- as_factor(rep(c(1,1,1,1,2,2,2,2,2,3), each = 3))
+dr$col <- as_factor(rep(c(1,1,1,1,2,2,2,2,2,3), each = 2))
 
 ggplot(dr, aes(xmin = lower, xmax = upper, y = measure, colour = col)) +
   geom_linerange(linewidth = 2, alpha = 0.7) +
