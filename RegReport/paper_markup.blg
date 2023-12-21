@@ -1,20 +1,20 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: paper.aux
+The top-level auxiliary file: paper_markup.aux
 The style file: rs.bst
 Database file #1: literature.bib
-I was expecting a `,' or a `}'---line 328 of file literature.bib
+I was expecting a `,' or a `}'---line 655 of file literature.bib
  : 
  : keywords = {foraging, working memory, inhibitory control, visual search, attention},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 374 of file literature.bib
+Repeated entry---line 747 of file literature.bib
  : @article{johannesson2017
  :                         ,
 I'm skipping whatever remains of this entry
 You've used 27 entries,
             2202 wiz_defined-function locations,
-            672 strings with 8879 characters,
+            672 strings with 8893 characters,
 and the built_in function-call counts, 10987 in all, are:
 = -- 1092
 > -- 540

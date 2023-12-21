@@ -1,56 +1,56 @@
-This is BibTeX, Version 0.99d (TeX Live 2021)
+This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: paper_nomarkup.aux
 The style file: rs.bst
 Database file #1: literature.bib
-I was expecting a `,' or a `}'---line 328 of file literature.bib
+I was expecting a `,' or a `}'---line 655 of file literature.bib
  : 
  : keywords = {foraging, working memory, inhibitory control, visual search, attention},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Repeated entry---line 374 of file literature.bib
+Repeated entry---line 747 of file literature.bib
  : @article{johannesson2017
  :                         ,
 I'm skipping whatever remains of this entry
-You've used 27 entries,
+You've used 26 entries,
             2202 wiz_defined-function locations,
-            672 strings with 8897 characters,
-and the built_in function-call counts, 10987 in all, are:
-= -- 1092
-> -- 540
+            666 strings with 8743 characters,
+and the built_in function-call counts, 10559 in all, are:
+= -- 1053
+> -- 514
 < -- 18
-+ -- 172
-- -- 162
-* -- 1017
-:= -- 1890
-add.period$ -- 33
-call.type$ -- 27
-change.case$ -- 189
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 429
-empty$ -- 731
-format.name$ -- 205
-if$ -- 2215
++ -- 164
+- -- 154
+* -- 972
+:= -- 1814
+add.period$ -- 32
+call.type$ -- 26
+change.case$ -- 181
+chr.to.int$ -- 26
+cite$ -- 26
+duplicate$ -- 414
+empty$ -- 703
+format.name$ -- 196
+if$ -- 2131
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 26
-newline$ -- 90
-num.names$ -- 81
-pop$ -- 176
+missing$ -- 25
+newline$ -- 87
+num.names$ -- 78
+pop$ -- 169
 preamble$ -- 1
-purify$ -- 216
+purify$ -- 207
 quote$ -- 0
-skip$ -- 334
+skip$ -- 324
 stack$ -- 0
-substring$ -- 691
-swap$ -- 107
+substring$ -- 667
+swap$ -- 104
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 158
+type$ -- 152
 warning$ -- 0
-while$ -- 82
+while$ -- 79
 width$ -- 0
-write$ -- 247
+write$ -- 238
 (There were 2 error messages)
